@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>購物網站</title>
+    <link rel="stylesheet" href="static/css/product_news_1_style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="C:\Users\mnbgt\Desktop\website\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Information_bar">
+        <a href="/"><img class="website_logo" src="static/images/首頁_LOGO.PNG"></a>
+        <!-- <i class="fas fa-desktop fa-2x" id="computer_news">
+      <span class="news_icon">電腦新聞&ensp;&ensp;&ensp;&ensp;&ensp;|</span>
+    </i> -->
+        <a href="/login" style="text-decoration: none; color: black">
+            <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 登入 /
+          註冊&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>|
+        <a href="/cart" style="text-decoration: none; color: black;">
+            <i class="fas fa-shopping-cart fa-2x" aria-hidden="true" id="cart"><span class="cart_icon"> 購物車</span></i>
+        </a>
+
+    </div>
+    <div class="sidebar_new">
+        <nav class="sidebar" style="float: left;">
+            <div class="text">電腦零組件分類</div>
+            <!-- 搜尋 -->
+            <!-- <div class="search_box">
+        <form>
+          <input type="text" placeholder="請輸入關鍵字">
+          <input type="submit" value="搜尋">
+        </form>
+      </div> -->
+            <ul>
+                <li><a href="#" class="CPU-btn">中央處理器<span class="fas fa-caret-down 1"></span></a>
+                    <ul class="CPU-show">
+                        <li><a href="#" class="CPU_INTEL-btn">Intel<span class="fas fa-caret-down 1-1"></span></a>
+                            <ul class="CPU_INTEL-show">
+                                <li><a href="/product_info">Core i9系列(第11代)</a></li>
+                                <li><a href="#">Core i7系列(第11代)</a></li>
+                                <li><a href="#">Core i5系列(第11代)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="CPU_AMD-btn">AMD<span class="fas fa-caret-down 1-2"></span></a>
+                            <ul class="CPU_AMD-show">
+                                <li><a href="#">AMD Ryzen 9(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 7(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 5(5000系列)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="MB-btn">主機板<span class="fas fa-caret-down 2"></span></a>
+                    <ul class="MB-show">
+                        <li><a href="#" class="MB_Intel-btn">Intel<span class="fas fa-caret-down 2-1"></span></a>
+                            <ul class="MB_INTEL-show">
+                                <li><a href="#">H410 | 1200腳位</a></li>
+                                <li><a href="#">H510 | 1200腳位</a></li>
+                                <li><a href="#">H570 | 1200腳位</a></li>
+                                <li><a href="#">B460 | 1200腳位</a></li>
+                                <li><a href="#">B560 | 1200腳位</a></li>
+                                <li><a href="#">Z490 | 1200腳位</a></li>
+                                <li><a href="#">Z590 | 1200腳位</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="MB_AMD-btn">AMD<span class="fas fa-caret-down 2-2"></span></a>
+                            <ul class="MB_AMD-show">
+                                <li><a href="#">AM4 X570</a></li>
+                                <li><a href="#">AM4 B550</a></li>
+                                <li><a href="#">AM4 A520</a></li>
+                                <li><a href="#">AM4 X470</a></li>
+                                <li><a href="#">AM4 B450</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="RAM-btn">記憶體<span class="fas fa-caret-down 3"></span></a>
+                    <ul class="RAM-show">
+                        <li><a href="#">DDR4-8GB</a></li>
+                        <li><a href="#">DDR4-16GB</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="VGA-btn">顯示卡<span class="fas fa-caret-down 4"></span></a>
+                    <ul class="VGA-show">
+                        <li><a href="#" class="VGA_NVIDIA-btn">NVIDIA<span class="fas fa-caret-down 4-1"></span></a>
+                            <ul class="VGA_NVIDIA-show">
+                                <li><a href="#">RTX3090</a></li>
+                                <li><a href="#">RTX3080Ti</a></li>
+                                <li><a href="#">RTX3080</a></li>
+                                <li><a href="#">RTX3070Ti</a></li>
+                                <li><a href="#">RTX3070</a></li>
+                                <li><a href="#">RTX3060Ti</a></li>
+                                <li><a href="#">RTX3060</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="VGA_AMD-btn">AMD<span class="fas fa-caret-down 4-2"></span></a>
+                            <ul class="VGA_AMD-show">
+                                <li><a href="#">RX6900XT</a></li>
+                                <li><a href="#">RX6800XT</a></li>
+                                <li><a href="#">RX6800</a></li>
+                                <li><a href="#">RX6700XT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="SSD-btn">SSD固態硬碟<span class="fas fa-caret-down 5"></span></a>
+                    <ul class="SSD-show">
+                        <li><a href="#" class="SSD_SATA-btn">2.5吋 SATA<span class="fas fa-caret-down 5-1"></span></a>
+                            <ul class="SSD_SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2PCIE-btn">M.2 PCIE<span class="fas fa-caret-down 5-2"></span></a>
+                            <ul class="SSD_M2PCIE-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2SATA-btn">M.2 SATA<span class="fas fa-caret-down 5-3"></span></a>
+                            <ul class="SSD_M2SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#">電源供應器</a></li>
+                <li><a href="#">電腦機殼</a></li>
+                <li><a href="#">螢幕</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="product_info">
+        <div>
+            <h1 class="t1">
+                【上班一定要看】5種Chrome摸魚擴充功能 學會變高手
+            </h1>
+        </div>
+        <br>
+        <p class="time">
+            2021-07-22 7:51
+        </p>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-c58d58c593451b3cda00721ec9dfa585.jpg">
+        </div>
+        <div>
+            <p>
+                盯著電腦時偶爾<del>兩眼放空</del>捕捉靈感，或處理一下個人生涯，應該是上班族們都做過的事。我不知道大家有多少工作是在Chrome上完成的，我個人是90%吧，而Chrome上有不少擴充功能，可以提高摸魚的安全性，並提高摸魚效率（咦？），早點摸完早點工作早點下班，多棒的正循環啊! 今天就來跟大家分享我試用的幾款Chrome擴充功能吧。（我真的只是昨天試用喔）
+            </p>
+            <br>
+            <br>
+        </div>
+        <h1 class="t2">
+            1. 一鍵隱藏所有網頁 只剩認真工作的那一頁
+        </h1>
+        <br>
+        <br>
+        <p>
+            看盤、看YouTube、看好笑新聞...，開了一堆網頁正開心時，老闆突然走近，來不及關網頁實在很糗。不過在安裝《Panic Button》擴充後，點擊一鍵，就可以隱藏所有正在看的網頁，換上你設定好，顯示你正在認真工作的那個網頁，危機解除後，再一鍵就可以再開啟剛剛哪些網頁。
+        </p>
+        <br>
+        <br>
+        <div class="insert_video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/fNf-RTdMOzs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+        </div>
+        <br>
+        <br>
+        <p>在《Panic Button》的選項裡，你可以貼上網址，指定你要顯示哪些認真工作的網頁、鍵盤快鍵、回復原本網頁時，需不需要輸入密碼...等。我這裡是歪掉用來摸魚，但本質上，是個很好的防窺探工具，尤其當你短暫離開座位時，可以保護有心人探視你瀏覽的網頁。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-05b5f4f7462df95021c0f4606b5cc94d.jpg">
+        </div>
+        <br>
+        <br>
+        <h1 class="t2">
+            2. 快看一下個股跟買點提醒 財神路過不要錯過
+        </h1>
+        <br>
+        <br>
+        <p>
+            大家上班時怎麼看盤？很多人應該是在手機裝忙看吧，還是根本光明正大看讚... 誰叫開盤時間跟上班時間一樣呢？是台股的錯，打打... Chrome裡當然有不少看盤擴充功能，昨兒個研究一下，綜合評分、使用人數跟更新率來看，我安裝了
+            <a href="https://chrome.google.com/webstore/detail/%E5%8F%B0%E8%82%A1com/fihgaomjmoflomciogilibcjgpmiddfa?hl=zh-TW" target="_blank">《台股.com》</a>。 點擊圖示時就可以快看一下自訂個股漲跌、成交跟盤中高低...等，滑鼠移到圖示上則可看集中市場與店頭市場指數。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-0fe5941a0f706b87ec7875aeb4a65407.jpg">
+        </div>
+        <br>
+        <br>
+        <p>在工具選項裡，除了可以添加台灣個股外，還可以設定價到提醒，包括股價、漲跌幅、成交量等指標，並在桌面跳出提醒。另外預設是60秒就更新一次，你也可以在選項裡自設更新頻率。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-49f7f828117bde4ad44c50328fb73f31.jpg">
+        </div>
+        <br>
+        <br>
+        <h1 class="t2">
+            3. 把影片縮到角角低調看
+        </h1>
+        <br>
+        <br>
+        <p>
+            不敢光明正大，也不方便一直低頭看手機看影片時，就需要縮小影片視窗的工具了。 Chrome上有很多Picture in Pictire，子母畫面的擴充功能，如果你都看YouTube，其實不必安裝，<b style="font-weight: bold;color:#FF7F50;">
+        在影片上點兩下滑鼠右鍵</b>，就可以用子母畫面縮小看了。不過這工具有個問題是，字幕不會跟著過去。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-abd8e6dcd7165177b006f35e2c013c6a.jpg">
+        </div>
+        <br>
+        <br>
+        <p>如果不只YT，你還會看Facebook、Netflix、愛奇藝...等任何其他網站的影片，就要安裝擴充功能了，Google自己就有出<a href="https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg?hl=zh-TW">《Picture-in-Picture
+        Extension (by
+        Google)》</a>，在看任何網站的影片時，點一下就可以變成浮動視窗來看。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-6ac3def099d24b8c8143f4ad2c5b660a.jpg">
+        </div>
+        <br>
+        <br>
+        <p>
+            不過這工具仍無法把YT或是Netflix那種外加的字幕帶到小視窗去，而且還是有些網頁無法縮成子母畫面，這時候你可以選擇安裝<a href="https://chrome.google.com/webstore/detail/flobro/faaljkdndnfoagcmhedlmbgieoocemch">《Flobro》</a>，或<a href="https://chrome.google.com/webstore/detail/tabfloater-picture-in-pic/iojgbjjdoanmhcmmihbapiejfbbadhjd?hl=zh-TW">《TabFloater》</a>了，把整個網頁縮到角角。前者是應用程式，後者是擴充功能，操作起來比較方便，這裡介紹後者。
+            安裝後點擊，它就會把要看的那個標籤頁縮小，讓你拉到低調的地方看片，絕對不會影響你工作！（看球賽直播好用啊）
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-ba610f7a3d97643750e1ba889cc5572b.jpg">
+        </div>
+        <br>
+        <br>
+        <p>
+            但你說，我自己把網頁拉小不是一樣？ 其實你仔細看，透過《TabFloater》縮小的畫面，把書籤列、工具列等都去掉了，優化成一個很純粹顯示內容的頁面，比較適合看影片。不只影片，看盤網頁也可以用這工具縮到角角。 《TabFloater》的選項裡可以再做幾個更方便的設定，包括固定縮小視窗的位置、始終在最上層（不被其他程式覆蓋），以及記住縮放大小、鍵盤快鍵...等。 不過始終在最上層這功能，需要另外安裝《TabFloater》的Companion工具（Windows、MacOS跟Linux都支援），這就看大家的用量跟需求來安裝囉。
+            摸魚是一個歪掉的用途，正常來說，這對螢幕不大的筆電多視窗工作應該很有幫助，尤其要開啟一直監控的網頁時，可以節省空間外，介面也更好。
+        </p>
+        <br>
+        <br>
+        <h1 class="t2">
+            4. 用滑鼠預覽部分再決定要不要看
+        </h1>
+        <br>
+        <br>
+        <p>
+            時間寶貴，摸魚看PTT或新聞，也是要講求效率的，安裝<a href="https://chrome.google.com/webstore/detail/survol/fdnnmbmkgfdjclkgimonnimokhnndalk?hl=zh-TW">《Survol》</a>後，把滑鼠移到任何標題上，就可以預覽前幾行，覺得想看再點進去就好了，這對看只有標題的文章清單很有幫助，也可以避免「網友驚呼！」、「女星這樣做...」之類的標題浪費時間。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-49b2318fb9c59356796b3a355bb0dce2.jpg">
+        </div>
+        <br>
+        <br>
+        <p>
+            呃...01的熱門討論也可以...以後第一段是不是要寫內有長輩比較好...
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-e19c5c4bbfe7e0dd565d64275eb54f0a.jpg">
+        </div>
+        <br>
+        <br>
+        <h1 class="t2">
+            5. 在閱讀器裡讀書培養斜槓能力
+        </h1>
+        <br>
+        <br>
+        <p>
+            有在用電子書閱讀器的，應該都知道<a href="https://calibre-ebook.com/download">《Calibre》</a>這個電子書編輯程式，可以將電子書轉檔、編輯、傳送到各種閱讀器裡，非常方便，這個程式本身也是一個很清爽的Reader。 正因為清爽，沒有工具列，所以可以很好混淆在Word之類，打文件的頁面上。把上下左右邊界調小就更好隱藏了。閱讀時可以用鍵盤操作，更低調的
+            <del>看小說</del>充實知識。 啊可以這是程式，不是擴充功能...啊～隨便啦...
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-ff556e441251c6048d98a8a17ce388cc.jpg">
+        </div>
+        <br>
+        <br>
+        <p>
+            好啦，上面語氣有點惡趣味，但正經說...疫情影響下還可正常工作似乎就要感恩了... 這些單獨來看，也都是工作上蠻實用的工具，不過個人還是覺得摸魚也不盡是壞處，低調、適當均衡，不要影響別人和該做的事就好了...為了大家工作身心健康，摸過覺得好用請分享～感恩～挖鼻孔
+        </p>
+        <br>
+        <br>
+        <p>
+            (圖片來源：depositphotos)
+        </p>
+        <br>
+        <br>
+    </div>
+    <!-- 從這裡開始，輪播 -->
+    <!-- <div id="slider">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+    <div id="slides">
+      <div id="overflow">
+        <div class="inner">
+          <div class="slide slide_1">
+            <img src="static\images\carousel_1.jpeg">
+          </div>
+          <div class="slide slide_2">
+            <img src="static\images\carousel_2.jpeg">
+          </div>
+          <div class="slide slide_3">
+            <img src="static\images\carousel_3.jpeg">
+          </div>
+          <div class="slide slide_4">
+            <img src="static\images\carousel_4.jpeg">
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- controls是更換輪播頁面的按鈕(> or <) -->
+    <!-- <div id="controls">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div> -->
+    <!-- bullets是更換輪播頁面的按鈕(圓形radio) -->
+    <!-- <div id="bullets">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div>
+  </div> -->
+    <!-- 到這裡結束，輪播 -->
+    <!-- <div class="u-gapNextV--lg">
+    <div class="l-heading">電腦新聞</div>>
+    <div class="l-appearArea">
+      <div class="l-appearArea__content u-overflow">
+        <div class="l-cols">
+          <div class="l-cols__4">
+            123
+          </div>
+          <div class="l-cols__4">
+            123
+          </div>
+          <div class="l-cols__4">
+            123
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div> -->
+    <!-- 電腦新聞 -->
+    <!-- <div class="product_news">
+    <div>
+      <h1 class="heading">
+        電腦新聞
+      </h1>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/7253cf568396086df2b5f0f0b7880120.jpg">
+      </div>
+      <div class="product_description">
+        【上班一定要看】5種Chrome摸魚擴充功能 學會變高手
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/a80c7969dd8fbb85c26c9bbac1c32cbf.jpg">
+      </div>
+      <div class="product_description">
+        CORSAIR H170i ELITE CAPELLIX AIO CPU 水冷散熱器實測 最強賊船冷卻旗艦出航
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/843e2acf8fa3a0a2d49645903e193714.jpg">
+      </div>
+      <div class="product_description">
+        LG UltraFine Display Ergo 32UN880 人體工學螢幕開箱 顯示視野隨你調整
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/06d201fc153b04a98a6103eb17a9054f.jpg">
+      </div>
+      <div class="product_description">
+        ROG RYUJIN II 360 AIO 水冷散熱器實測 將敗家信仰提升到最高點
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/c9ae8cc714a1dcc61ab56e23243e65a2.jpg">
+      </div>
+      <div class="product_description">
+        TP-Link Archer GX90 WiFi 6 電競路由器開箱體驗 居家防疫時期的必備網路良藥
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/4649a1fe981cc9aace83954506c3b426.jpg">
+      </div>
+      <div class="product_description">
+        BenQ PD2725U 螢幕開箱測試 以多模式提供色彩準度的專業選擇
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/2b8e4b57a24b79999a52da555c1486fd.jpg">
+      </div>
+      <div class="product_description">
+        ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡開箱實測 全面升級的中階性能選擇
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/63536092d75bad78b1ab20378becf6f3.jpg">
+      </div>
+      <div class="product_description">
+        ROG SWIFT PG32UQX 電競螢幕開箱體驗 以 Mini LED 技術達成超細膩畫質演出
+      </div>
+    </div>
+  </div> -->
+    <!-- 電腦新聞 -->
+
+    <script>
+        // 中央處理器
+        $('.CPU-btn').click(function() {
+            $('nav ul .CPU-show').toggleClass("show1");
+            $('nav ul .1').toggleClass("rotate");
+        });
+        $('.CPU_INTEL-btn').click(function() {
+            $('nav ul .CPU_INTEL-show').toggleClass("show1-1");
+            $('nav ul .1-1').toggleClass("rotate");
+        });
+        $('.CPU_AMD-btn').click(function() {
+            $('nav ul .CPU_AMD-show').toggleClass("show1-2");
+            $('nav ul .1-2').toggleClass("rotate");
+        });
+
+        // 主機板
+        $('.MB-btn').click(function() {
+            $('nav ul .MB-show').toggleClass("show2");
+            $('nav ul .2').toggleClass("rotate");
+        });
+        $('.MB_Intel-btn').click(function() {
+            $('nav ul .MB_INTEL-show').toggleClass("show2-1");
+            $('nav ul .2-1').toggleClass("rotate");
+        });
+        $('.MB_AMD-btn').click(function() {
+            $('nav ul .MB_AMD-show').toggleClass("show2-2");
+            $('nav ul .2-2').toggleClass("rotate");
+        });
+
+        // 記憶體
+        $('.RAM-btn').click(function() {
+            $('nav ul .RAM-show').toggleClass("show3");
+            $('nav ul .3').toggleClass("rotate");
+        });
+
+        // 顯示卡
+        $('.VGA-btn').click(function() {
+            $('nav ul .VGA-show').toggleClass("show4");
+            $('nav ul .4').toggleClass("rotate");
+        });
+        $('.VGA_NVIDIA-btn').click(function() {
+            $('nav ul .VGA_NVIDIA-show').toggleClass("show4-1");
+            $('nav ul .4-1').toggleClass("rotate");
+        });
+        $('.VGA_AMD-btn').click(function() {
+            $('nav ul .VGA_AMD-show').toggleClass("show4-2");
+            $('nav ul .4-2').toggleClass("rotate");
+        });
+
+        // SSD固態硬碟
+        $('.SSD-btn').click(function() {
+            $('nav ul .SSD-show').toggleClass("show5");
+            $('nav ul .5').toggleClass("rotate");
+        });
+        $('.SSD_SATA-btn').click(function() {
+            $('nav ul .SSD_SATA-show').toggleClass("show5-1");
+            $('nav ul .5-1').toggleClass("rotate");
+        });
+        $('.SSD_M2PCIE-btn').click(function() {
+            $('nav ul .SSD_M2PCIE-show').toggleClass("show5-2");
+            $('nav ul .5-2').toggleClass("rotate");
+        });
+        $('.SSD_M2SATA-btn').click(function() {
+            $('nav ul .SSD_M2SATA-show').toggleClass("show5-3");
+            $('nav ul .5-3').toggleClass("rotate");
+        });
+
+
+        $('nav ul li').click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    </script>
+
+</body>
+
+</html>

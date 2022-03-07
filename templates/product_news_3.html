@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>購物網站</title>
+    <link rel="stylesheet" href="static/css/product_news_1_style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="C:\Users\mnbgt\Desktop\website\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Information_bar">
+        <a href="/"><img class="website_logo" src="static/images/首頁_LOGO.PNG"></a>
+        <!-- <i class="fas fa-desktop fa-2x" id="computer_news">
+      <span class="news_icon">電腦新聞&ensp;&ensp;&ensp;&ensp;&ensp;|</span>
+    </i> -->
+        <a href="/login" style="text-decoration: none; color: black">
+            <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 登入 /
+          註冊&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>|
+        <a href="/cart" style="text-decoration: none; color: black;">
+            <i class="fas fa-shopping-cart fa-2x" aria-hidden="true" id="cart"><span class="cart_icon"> 購物車</span></i>
+        </a>
+
+    </div>
+    <div class="sidebar_new">
+        <nav class="sidebar" style="float: left;">
+            <div class="text">電腦零組件分類</div>
+            <!-- 搜尋 -->
+            <!-- <div class="search_box">
+        <form>
+          <input type="text" placeholder="請輸入關鍵字">
+          <input type="submit" value="搜尋">
+        </form>
+      </div> -->
+            <ul>
+                <li><a href="#" class="CPU-btn">中央處理器<span class="fas fa-caret-down 1"></span></a>
+                    <ul class="CPU-show">
+                        <li><a href="#" class="CPU_INTEL-btn">Intel<span class="fas fa-caret-down 1-1"></span></a>
+                            <ul class="CPU_INTEL-show">
+                                <li><a href="/product_info">Core i9系列(第11代)</a></li>
+                                <li><a href="#">Core i7系列(第11代)</a></li>
+                                <li><a href="#">Core i5系列(第11代)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="CPU_AMD-btn">AMD<span class="fas fa-caret-down 1-2"></span></a>
+                            <ul class="CPU_AMD-show">
+                                <li><a href="#">AMD Ryzen 9(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 7(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 5(5000系列)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="MB-btn">主機板<span class="fas fa-caret-down 2"></span></a>
+                    <ul class="MB-show">
+                        <li><a href="#" class="MB_Intel-btn">Intel<span class="fas fa-caret-down 2-1"></span></a>
+                            <ul class="MB_INTEL-show">
+                                <li><a href="#">H410 | 1200腳位</a></li>
+                                <li><a href="#">H510 | 1200腳位</a></li>
+                                <li><a href="#">H570 | 1200腳位</a></li>
+                                <li><a href="#">B460 | 1200腳位</a></li>
+                                <li><a href="#">B560 | 1200腳位</a></li>
+                                <li><a href="#">Z490 | 1200腳位</a></li>
+                                <li><a href="#">Z590 | 1200腳位</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="MB_AMD-btn">AMD<span class="fas fa-caret-down 2-2"></span></a>
+                            <ul class="MB_AMD-show">
+                                <li><a href="#">AM4 X570</a></li>
+                                <li><a href="#">AM4 B550</a></li>
+                                <li><a href="#">AM4 A520</a></li>
+                                <li><a href="#">AM4 X470</a></li>
+                                <li><a href="#">AM4 B450</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="RAM-btn">記憶體<span class="fas fa-caret-down 3"></span></a>
+                    <ul class="RAM-show">
+                        <li><a href="#">DDR4-8GB</a></li>
+                        <li><a href="#">DDR4-16GB</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="VGA-btn">顯示卡<span class="fas fa-caret-down 4"></span></a>
+                    <ul class="VGA-show">
+                        <li><a href="#" class="VGA_NVIDIA-btn">NVIDIA<span class="fas fa-caret-down 4-1"></span></a>
+                            <ul class="VGA_NVIDIA-show">
+                                <li><a href="#">RTX3090</a></li>
+                                <li><a href="#">RTX3080Ti</a></li>
+                                <li><a href="#">RTX3080</a></li>
+                                <li><a href="#">RTX3070Ti</a></li>
+                                <li><a href="#">RTX3070</a></li>
+                                <li><a href="#">RTX3060Ti</a></li>
+                                <li><a href="#">RTX3060</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="VGA_AMD-btn">AMD<span class="fas fa-caret-down 4-2"></span></a>
+                            <ul class="VGA_AMD-show">
+                                <li><a href="#">RX6900XT</a></li>
+                                <li><a href="#">RX6800XT</a></li>
+                                <li><a href="#">RX6800</a></li>
+                                <li><a href="#">RX6700XT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="SSD-btn">SSD固態硬碟<span class="fas fa-caret-down 5"></span></a>
+                    <ul class="SSD-show">
+                        <li><a href="#" class="SSD_SATA-btn">2.5吋 SATA<span class="fas fa-caret-down 5-1"></span></a>
+                            <ul class="SSD_SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2PCIE-btn">M.2 PCIE<span class="fas fa-caret-down 5-2"></span></a>
+                            <ul class="SSD_M2PCIE-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2SATA-btn">M.2 SATA<span class="fas fa-caret-down 5-3"></span></a>
+                            <ul class="SSD_M2SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#">電源供應器</a></li>
+                <li><a href="#">電腦機殼</a></li>
+                <li><a href="#">螢幕</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="product_info">
+        <div>
+            <h1 class="t1">
+                LG UltraFine Display Ergo 32UN880 人體工學螢幕開箱 顯示視野隨你調整
+            </h1>
+        </div>
+        <br>
+        <p class="time">
+            2021-07-17 11:20
+        </p>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-c5070b0640e1d13264e7b80f5d61dbe8.jpg">
+        </div>
+        <div>
+            <p>
+                LG UltraFine Display Ergo 32UN880 螢幕。
+            </p>
+            <br>
+            <br>
+            <p>
+                螢幕尺寸越買越大絕對是目前市場上的趨勢，從 24 吋、27 吋到現在的 32 吋款式，提供給使用者更大的畫面體驗。但相對越大尺寸的螢幕，相對應的也就需要更大型、重量更重的底座，才能提供螢幕在桌面上的穩定性，不過這樣一來就會佔用很多桌面空間。為了解決這個問題，很多人都會再購買一個桌面螢幕架或者是螢幕懸臂架來解放桌面空間，但這樣一來又是一筆花費了。
+            </p>
+            <br>
+            <br>
+            <p>
+                陳拔這次要來開箱實測的螢幕：LG UltraFine Display Ergo 32UN880 其實不是新品，但是特殊的點在於直接採用可大幅調整的人體工學支架設計，不僅不佔用桌面空間，也能夠提供更自由的使用方式，目前在市面上仍然少有類似的產品，所以趁著這次疫情期間，陳拔就向 LG 借來進行體驗測試，來看看 LG UltraFine Display Ergo 32UN880 螢幕到底能帶來多少的使用彈性。
+            </p>
+            <br>
+            <br>
+        </div>
+        <h1 class="t2">
+            LG UltraFine Display Ergo 32UN880 螢幕外觀與配件
+        </h1>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-d02aaa11da3a1e15d45730c17f2c6dd6.jpg">
+        </div>
+        <p>
+            LG UltraFine Display Ergo 32UN880 螢幕。
+        </p>
+        <br>
+        <br>
+        <p>於這次借出的螢幕並非新品，所以陳拔就不針對外箱進行拍攝，直接先來看內容物配件的部分。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-af1a0f773d69fd05c33b25bc1dd5229a.jpg">
+        </div>
+        <br>
+        <br>
+        <p>
+            LG UltraFine Display Ergo 32UN880 螢幕的盒裝配件部分，由左至右、由上至下分別為 Ergo 人體工學支架、電源變壓器、桌上線孔安裝配件、電源線、電源線延伸線、DIsplayPort 傳輸線、USB Type-C 傳輸線、驅動程式光碟、安裝說明、使用指南、C 型固定架緩衝墊。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-c5bbb8868555bcc85bc197dbca05630f.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的電源供應器，採用外接形式設計，體積不小。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-f8762e97ec37eaf439c01d0749dd81fb.jpg">
+        </div>
+        <br>
+        <br>
+        <p>電源供應器跟陳拔自己的 iPhone 12 Pro 比一下大小。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-2c003e33d122ea31d0274dde0fb8350f.jpg">
+        </div>
+        <br>
+        <br>
+        <p>電源供應器的輸出功率為 210.6 W。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-9af2ddbab8cd5e8561c5ebb25bdded44.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的支架部分，出廠時先預裝了桌邊 C 型的夾具。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-5aa3421168eac4aa21ea96dffb2cfba5.jpg">
+        </div>
+        <br>
+        <br>
+        <p>C型夾具的配置，採用旋轉螺絲搭配大型圓形墊片的方式，另外在桌面接觸的底座部分也具有軟質橡膠的緩衝設計。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-f5c3d4ca4dab4fdb13a878346f0cfdc9.jpg">
+        </div>
+        <br>
+        <br>
+        <p>
+            C 型夾具的的高度調整機制，除了透過旋轉螺絲與圓形墊片的搭配外，也可以透過直接更改下方固定座的鎖定高度，來適應不同的桌板厚度，在這部分 LG 共提供了三段的調整範圍。
+        </p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-708fc11f7e37fa1c835b4c4125f4dda5.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的安裝指南裡，有標示了可以安裝的桌面厚度，桌面厚度最大支援到 90mm（9 公分）。另外若是採用桌面穿線孔的安裝方式，支援的孔徑大小在 20 到 40 mm（2 公分至 4 公分）。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-a3cd77fdfe074355b7a133a2e7ae32c5.png">
+        </div>
+        <br>
+        <br>
+        <p>依照桌板厚度不同來調整夾具的安裝方式。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-6dd48bdeffae5c852b41f1e8f6620990.jpg">
+        </div>
+        <br>
+        <br>
+        <p>實際以桌邊 C 型夾具先安裝支架的情形。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-29f81aa915130001cc6b540f8ffa3de8.jpg">
+        </div>
+        <br>
+        <br>
+        <p>由桌板下方拍攝 C 型夾具固定的方式。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-7eb7e7c6d0cd8e97cf74e7c4fa817192.jpg">
+        </div>
+        <br>
+        <br>
+        <p>另外如果是要以桌面穿線孔的方式安裝，就要更換夾具配置。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-b5dd327e9caa439fb5003017018068f8.jpg">
+        </div>
+        <br>
+        <br>
+        <p>在卸除連接底座的四顆螺絲後，就可將夾具更換為桌面穿線孔適用的型態，圖為安裝好的狀態。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-301ac5c2c5020a245b761eb709d50039.jpg">
+        </div>
+        <br>
+        <br>
+        <p>在桌面穿線孔夾具的底板上，有提供面向前方的指示標誌。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-3ad19069fcdf4187cf6dc1bfec1ff391.jpg">
+        </div>
+        <br>
+        <br>
+        <p>因為 01 辦公室是具有桌面穿線孔的配置，所以就直接用這個型態安裝給大家看，可以看到佔用的桌面空間相當小。</p>
+        <br>
+        <br>
+        <p>接著來看這次 LG UltraFine Display Ergo 32UN880 螢幕的主要特色：支架調整的設計，除了採用縮小體積的桌面夾具固定形式外， LG UltraFine Display Ergo 32UN880 螢幕的支架直接採用可以延伸懸臂式的設計，搭配後方的球型結構，提供具有極大彈性的螢幕顯示方向調整。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-63d0d345e644474207b54be71799ca1c.jpg">
+        </div>
+        <br>
+        <br>
+        <p>採用可延伸的懸臂設計、搭配球型結構，提供極大的螢幕顯示位置調整。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-ad1856905dc50d0efa819b90ac31a0c6.jpg">
+        </div>
+        <br>
+        <br>
+        <p>與螢幕連接基座的球型轉動結構。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-4d41925a3dedf0493a640f6a5b874e2f.jpg">
+        </div>
+        <br>
+        <br>
+        <p>兩段式可轉動的懸臂設計。</p>
+        <br>
+        <br>
+        <p>從上方看懸臂可轉動的範圍，可以依照需求將螢幕拉近、拉遠、平移、轉動顯示方向等，由於可以調整的角度相當大，直接看影片比較快。</p>
+        <br>
+        <br>
+        <div class="insert_video">
+            <iframe width="560" height="315" src="https://youtu.be/InEH8UrJfIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-d95b923251139e2ef2fb0f341b65d047.jpg">
+        </div>
+        <br>
+        <br>
+        <p>另外支架部分也提供了上下高度調整的功能，提供 12.5 公分的高度調整距離。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-3d4a8acf99ad8d7027be678ea2fb0af8.jpg">
+        </div>
+        <br>
+        <br>
+        <p>(一)螢幕高度最高</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-9eb5629dca6d881c75ff5922becfdf30.jpg">
+        </div>
+        <br>
+        <br>
+        <p>(一)螢幕高度最低</p>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕也可以向上或是向下轉動，提供各 25 º 的俯仰角度調整。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-ad3aac4fd9bd565cd392dd8843c949f6.jpg">
+        </div>
+        <br>
+        <br>
+        <p>(一)最大仰角</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-e0c0850b3302b28dc60407142aeed25d.jpg">
+        </div>
+        <br>
+        <br>
+        <p>(二)最大傾角</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-c95067c22c078bd355f0d4920549b568.jpg">
+        </div>
+        <br>
+        <br>
+        <p>另外垂直部分提供單一向左旋轉 90º 的調整方式。</p>
+        <br>
+        <br>
+        <p>而為了整線美觀，LG 也在 UltraFine Display Ergo 32UN880 螢幕支架部分，設置了可將連接線隱藏收納的設計，能夠在視覺上減少多條線材的凌亂感。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-4d8da7b989b85f627bca5c1106f1f672.jpg">
+        </div>
+        <br>
+        <br>
+        <p>可將電源延長線以及傳輸線藏在支架中，減少桌面的凌亂程度，雖然收納線槽蓋板很小，但裡頭的空間還蠻大的，收納 3 至4 條線應該沒問題。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-c4ebe32efc751525a46556eaac8c7f0e.jpg">
+        </div>
+        <br>
+        <br>
+        <p>支架下方的收納線槽出口。</p>
+        <br>
+        <br>
+        <p>在安裝好夾具後，就能夠將螢幕裝上支架， LG UltraFine Display Ergo 32UN880 螢幕在這部分也是採用金屬插銷＋快扣的形式，先對準支架上方的兩根插銷位置插入，再對準下方卡入即可完成。不過因為 LG UltraFine Display Ergo 32UN880 螢幕本身仍然有點重量，在安裝時最好還是有另外一個人幫忙會比較好。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-079407dbc6888a0dbb628737f0d985ff.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的正面，採用三邊窄邊框的設計，搭配夾具底坐在視野上真的相當簡潔。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-eee55786e19ff1c8382c7e3320d4dfd7.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的背面。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-48c17fb680e678e1b71972db30fd6f0d.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的連接埠設置在背面轉軸旁，由上至下、由左至右分別為：USB Type-C 連接埠、DisplayPort 連接埠、2 組 HDMI 連接埠、2 組 USB 3.0 連接埠、3.5 mm 耳機輸出、電源供應器連接孔。在 USB-C 連接埠的部分，可以直接透過 USB-C 傳輸線接上電腦接受影像輸入，另外 LG UltraFine Display Ergo 32UN880 也支援 Power Delivery 規格，可提供
+            60W 的充電功率。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-b4fb8cbeb029bed18c9edba89d894655.png">
+        </div>
+        <br>
+        <br>
+        <p>在 MacBook Pro 15 裡的系統資訊辨識為 60 W 的充電器。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-13f8236bba9d0ca342d135e2dc47802a.jpg">
+        </div>
+        <br>
+        <br>
+        <p>螢幕與支架結合的球型轉動設計。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-ef0948a135d3c98e50232c0fd371252c.jpg">
+        </div>
+        <br>
+        <br>
+        <p>下方則是螢幕與支架鎖定機構的釋放鈕。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-b91f0069e5fb3aa9d2c9f7dd20ab4550.jpg">
+        </div>
+        <br>
+        <br>
+        <p>螢幕背面接近下方處設置了 Kensington 防盜鎖孔。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-4711817762f6af9129a7bb42943f0861.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的上緣，在中央有散熱格柵設計。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-404266d3d1160fdf6f41d212e113b6ba.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的側面，並沒有散熱孔的配置。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-43d2ef6dce62d581c3bf5048f52500b8.jpg">
+        </div>
+        <br>
+        <br>
+        <p>LG UltraFine Display Ergo 32UN880 螢幕的底部，設置了大面積的散熱格柵，中央則具有可控制 OSD 介面的五向搖桿。</p>
+        <br>
+        <br>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-e45cfa42741f5324bc49c872ef999c39.jpg">
+        </div>
+        <br>
+        <br>
+        <p>放大看五向搖桿的設計，而這顆五向搖桿也兼具電源鍵的功能。</p>
+        <br>
+        <br>
+    </div>
+    <!-- 從這裡開始，輪播 -->
+    <!-- <div id="slider">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+    <div id="slides">
+      <div id="overflow">
+        <div class="inner">
+          <div class="slide slide_1">
+            <img src="static\images\carousel_1.jpeg">
+          </div>
+          <div class="slide slide_2">
+            <img src="static\images\carousel_2.jpeg">
+          </div>
+          <div class="slide slide_3">
+            <img src="static\images\carousel_3.jpeg">
+          </div>
+          <div class="slide slide_4">
+            <img src="static\images\carousel_4.jpeg">
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- controls是更換輪播頁面的按鈕(> or <) -->
+    <!-- <div id="controls">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div> -->
+    <!-- bullets是更換輪播頁面的按鈕(圓形radio) -->
+    <!-- <div id="bullets">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div>
+  </div> -->
+    <!-- 到這裡結束，輪播 -->
+    <!-- <div class="u-gapNextV--lg">
+    <div class="l-heading">電腦新聞</div>>
+    <div class="l-appearArea">
+      <div class="l-appearArea__content u-overflow">
+        <div class="l-cols">
+          <div class="l-cols__4">
+            123
+          </div>
+          <div class="l-cols__4">
+            123
+          </div>
+          <div class="l-cols__4">
+            123
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div> -->
+    <!-- 電腦新聞 -->
+    <!-- <div class="product_news">
+    <div>
+      <h1 class="heading">
+        電腦新聞
+      </h1>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/7253cf568396086df2b5f0f0b7880120.jpg">
+      </div>
+      <div class="product_description">
+        【上班一定要看】5種Chrome摸魚擴充功能 學會變高手
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/a80c7969dd8fbb85c26c9bbac1c32cbf.jpg">
+      </div>
+      <div class="product_description">
+        CORSAIR H170i ELITE CAPELLIX AIO CPU 水冷散熱器實測 最強賊船冷卻旗艦出航
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/843e2acf8fa3a0a2d49645903e193714.jpg">
+      </div>
+      <div class="product_description">
+        LG UltraFine Display Ergo 32UN880 人體工學螢幕開箱 顯示視野隨你調整
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/06d201fc153b04a98a6103eb17a9054f.jpg">
+      </div>
+      <div class="product_description">
+        ROG RYUJIN II 360 AIO 水冷散熱器實測 將敗家信仰提升到最高點
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/c9ae8cc714a1dcc61ab56e23243e65a2.jpg">
+      </div>
+      <div class="product_description">
+        TP-Link Archer GX90 WiFi 6 電競路由器開箱體驗 居家防疫時期的必備網路良藥
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/4649a1fe981cc9aace83954506c3b426.jpg">
+      </div>
+      <div class="product_description">
+        BenQ PD2725U 螢幕開箱測試 以多模式提供色彩準度的專業選擇
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/2b8e4b57a24b79999a52da555c1486fd.jpg">
+      </div>
+      <div class="product_description">
+        ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡開箱實測 全面升級的中階性能選擇
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/63536092d75bad78b1ab20378becf6f3.jpg">
+      </div>
+      <div class="product_description">
+        ROG SWIFT PG32UQX 電競螢幕開箱體驗 以 Mini LED 技術達成超細膩畫質演出
+      </div>
+    </div>
+  </div> -->
+    <!-- 電腦新聞 -->
+
+    <script>
+        // 中央處理器
+        $('.CPU-btn').click(function() {
+            $('nav ul .CPU-show').toggleClass("show1");
+            $('nav ul .1').toggleClass("rotate");
+        });
+        $('.CPU_INTEL-btn').click(function() {
+            $('nav ul .CPU_INTEL-show').toggleClass("show1-1");
+            $('nav ul .1-1').toggleClass("rotate");
+        });
+        $('.CPU_AMD-btn').click(function() {
+            $('nav ul .CPU_AMD-show').toggleClass("show1-2");
+            $('nav ul .1-2').toggleClass("rotate");
+        });
+
+        // 主機板
+        $('.MB-btn').click(function() {
+            $('nav ul .MB-show').toggleClass("show2");
+            $('nav ul .2').toggleClass("rotate");
+        });
+        $('.MB_Intel-btn').click(function() {
+            $('nav ul .MB_INTEL-show').toggleClass("show2-1");
+            $('nav ul .2-1').toggleClass("rotate");
+        });
+        $('.MB_AMD-btn').click(function() {
+            $('nav ul .MB_AMD-show').toggleClass("show2-2");
+            $('nav ul .2-2').toggleClass("rotate");
+        });
+
+        // 記憶體
+        $('.RAM-btn').click(function() {
+            $('nav ul .RAM-show').toggleClass("show3");
+            $('nav ul .3').toggleClass("rotate");
+        });
+
+        // 顯示卡
+        $('.VGA-btn').click(function() {
+            $('nav ul .VGA-show').toggleClass("show4");
+            $('nav ul .4').toggleClass("rotate");
+        });
+        $('.VGA_NVIDIA-btn').click(function() {
+            $('nav ul .VGA_NVIDIA-show').toggleClass("show4-1");
+            $('nav ul .4-1').toggleClass("rotate");
+        });
+        $('.VGA_AMD-btn').click(function() {
+            $('nav ul .VGA_AMD-show').toggleClass("show4-2");
+            $('nav ul .4-2').toggleClass("rotate");
+        });
+
+        // SSD固態硬碟
+        $('.SSD-btn').click(function() {
+            $('nav ul .SSD-show').toggleClass("show5");
+            $('nav ul .5').toggleClass("rotate");
+        });
+        $('.SSD_SATA-btn').click(function() {
+            $('nav ul .SSD_SATA-show').toggleClass("show5-1");
+            $('nav ul .5-1').toggleClass("rotate");
+        });
+        $('.SSD_M2PCIE-btn').click(function() {
+            $('nav ul .SSD_M2PCIE-show').toggleClass("show5-2");
+            $('nav ul .5-2').toggleClass("rotate");
+        });
+        $('.SSD_M2SATA-btn').click(function() {
+            $('nav ul .SSD_M2SATA-show').toggleClass("show5-3");
+            $('nav ul .5-3').toggleClass("rotate");
+        });
+
+
+        $('nav ul li').click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    </script>
+
+</body>
+
+</html>

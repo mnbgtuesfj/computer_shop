@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.Information_bar{
+    height: 70px;
+    background-color: #dedede;
+}
+.website_logo{
+    position: absolute;
+    left: 300px;
+    width: 180px;
+    top: -5px;
+}
+.search_box{
+    position: absolute;
+    top: 35px;
+    right: 250px;
+    transform: translate(-50%,-50%);
+    width: 500px;
+}
+#computer_news{
+    position: absolute;
+    top: 15px;
+    right: 400px;
+}
+.news_icon{
+    font-size: 16px;
+}
+#user{
+    position: absolute;
+    top: 15px;
+    right: 190px;
+}
+.user_icon{
+    font-size: 16px;
+}
+#cart{
+    position: absolute;
+    top: 15px;
+    right: 50px;
+}
+.cart_icon{
+    font-size: 16px;
+}
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+input[type="text"]{
+    background: #fff; 
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 25px 0 0 25px;
+}
+input[type="submit"]{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    left: -5px;
+    border-radius: 0 25px 25px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #ffc107;
+    color: #fff;
+}
+input[type="submit"]:hover{
+    background: #ff5722;
+    transition: .5s;
+}
+/* 會員登入內容，從這裡開始 */
+.login_form{
+    line-height: 2;
+    width: 400px;
+    margin: 100px auto;
+}
+.header{
+    height: 35px;
+}
+ul{
+    list-style: none;
+}
+.tabs li{
+    width: 50%;
+    color: #aaa;
+    height: 35px;
+    font: bold 20px 微軟正黑體;
+    text-align: center;
+    float: left;
+}
+#member_login{
+    color: #06c;
+    cursor: pointer;
+}
+#member_register{
+    color: #aaa;
+    cursor: pointer;
+}
+/* .tabs .actived{
+    color: #06c;
+    cursor: pointer;
+} */
+.tabs span{
+    width: 100%;
+    padding: 6px 0px;
+}
+.tabs li+li:before{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 34px;
+    content: '';
+    border-left: 1px solid #aaa;
+}
+.tabs li+li{
+    position: relative;
+}
+.tabs li:not(.actived) span{
+    cursor: pointer;
+}
+.login_box li{
+    margin: 12px 0px;
+}
+.login_box ul li input{
+    width: 100%;
+    padding: 15px 8px;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+}
+#resetPasswordLink{
+    color: #1b92ee;
+    float: right;
+    cursor: pointer;
+}   
+#btnLogin,#btnRegister{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    margin: 6px 0px;
+    background:#1b92ee ;
+    font: 18px bold 微軟正黑體;
+    color: #fff;
+    padding: 14px;
+    letter-spacing: 10px; 
+    text-decoration: none;
+    border-radius: 15px;
+}
+.login_and_register_logo{
+    width: 100%;
+    margin: 40px auto 20px;
+}
+/* 會員登入內容，在這裡開始 */ 

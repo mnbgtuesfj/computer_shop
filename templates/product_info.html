@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="static/css/product_info_style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="C:\Users\mnbgt\Desktop\website\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Information_bar">
+        <a href="/"><img class="website_logo" src="static/images/首頁_LOGO.png"></a>
+        <!-- <i class="fas fa-desktop fa-2x" id="computer_news">
+      <span class="news_icon">電腦新聞&ensp;&ensp;&ensp;&ensp;&ensp;|</span>
+    </i> -->
+        <a href="/login" style="text-decoration: none; color: black">
+            <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 登入 /
+                    註冊&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>|
+        <a href="/cart" style="text-decoration: none; color: black;">
+            <i class="fas fa-shopping-cart fa-2x" aria-hidden="true" id="cart"><span class="cart_icon"> 購物車</span></i>
+        </a>
+    </div>
+    <!-- 麵包屑，開始 -->
+    <div class="breadcrumbs">
+        <a>首頁</a> >
+        <a>中央處理器 </a> >
+        <a>Core i9系列(第11代)</a>
+    </div>
+    <div id="product_get_info">
+
+    </div>
+    <!-- 麵包屑，結束 -->
+    <!-- 商品列表，開始 -->
+    <!-- <div class="product_news" id="123">
+        <div class="product_box">
+            <a href="/product/1234">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://products.autobuy.tw/IA1008020005821_6107636b.jpg">
+                </div>
+                <div class="product_description">
+                    Intel 第11代 Core i9-11900K 8核16緒
+                </div>
+            </a>
+        </div>
+        <div class="product_box">
+            <div class="product_box_new">
+                <img class="product_img" src="https://products.autobuy.tw/IA1008020060821_6107cb59.jpg">
+            </div>
+            <div class="product_description">
+                Intel 第11代 Core i9-11900KF 8核16緒
+            </div>
+        </div>
+        <div class="product_box">
+            <div class="product_box_new">
+                <img class="product_img" src="https://products.autobuy.tw/IA1008020004821_61076372.jpg">
+            </div>
+            <div class="product_description">
+                Intel 第11代 Core i9-11900 8核16緒
+            </div>
+        </div>
+        <div class="product_box">
+            <div class="product_box_new">
+                <img class="product_img" src="static/images/i9-11900f.png">
+            </div>
+            <div class="product_description">
+                Intel 第11代 Core i9-11900F 8核16緒
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="product_news" id="123">
+        <div class="product_box">
+            <a href="/product/1234">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://products.autobuy.tw/IA1008020005821_6107636b.jpg">
+                </div>
+                <div class="product_description">
+                    Intel 第11代 Core i9-11900K 8核16緒
+                </div>
+            </a>
+        </div>
+    </div> -->
+    <!-- 商品列表，結束 -->
+
+    <!-- -->
+    <!-- <div>
+        <button onclick="aa()" style="width:500px">觸發事件</button>
+    </div> -->
+    <!--  -->
+
+
+    <div class="sidebar_new">
+        <nav class="sidebar" style="float: left;">
+            <div class="text">電腦零組件分類</div>
+            <!-- 搜尋 -->
+            <!-- <div class="search_box">
+                <form>
+                    <input type="text" placeholder="請輸入關鍵字">
+                    <input type="submit" value="搜尋">
+                </form>
+            </div> -->
+
+            <ul>
+                <li><a href="#" class="CPU-btn">中央處理器<span class="fas fa-caret-down 1"></span></a>
+                    <ul class="CPU-show">
+                        <li><a href="#" class="CPU_INTEL-btn">Intel<span class="fas fa-caret-down 1-1"></span></a>
+                            <ul class="CPU_INTEL-show">
+                                <li><a href="/product_info">Core i9系列(第11代)</a></li>
+                                <li><a href="#">Core i7系列(第11代)</a></li>
+                                <li><a href="#">Core i5系列(第11代)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="CPU_AMD-btn">AMD<span class="fas fa-caret-down 1-2"></span></a>
+                            <ul class="CPU_AMD-show">
+                                <li><a href="#">AMD Ryzen 9(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 7(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 5(5000系列)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="MB-btn">主機板<span class="fas fa-caret-down 2"></span></a>
+                    <ul class="MB-show">
+                        <li><a href="#" class="MB_Intel-btn">Intel<span class="fas fa-caret-down 2-1"></span></a>
+                            <ul class="MB_INTEL-show">
+                                <li><a href="#">H410 | 1200腳位</a></li>
+                                <li><a href="#">H510 | 1200腳位</a></li>
+                                <li><a href="#">H570 | 1200腳位</a></li>
+                                <li><a href="#">B460 | 1200腳位</a></li>
+                                <li><a href="#">B560 | 1200腳位</a></li>
+                                <li><a href="#">Z490 | 1200腳位</a></li>
+                                <li><a href="#">Z590 | 1200腳位</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="MB_AMD-btn">AMD<span class="fas fa-caret-down 2-2"></span></a>
+                            <ul class="MB_AMD-show">
+                                <li><a href="#">AM4 X570</a></li>
+                                <li><a href="#">AM4 B550</a></li>
+                                <li><a href="#">AM4 A520</a></li>
+                                <li><a href="#">AM4 X470</a></li>
+                                <li><a href="#">AM4 B450</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="RAM-btn">記憶體<span class="fas fa-caret-down 3"></span></a>
+                    <ul class="RAM-show">
+                        <li><a href="#">DDR4-8GB</a></li>
+                        <li><a href="#">DDR4-16GB</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="VGA-btn">顯示卡<span class="fas fa-caret-down 4"></span></a>
+                    <ul class="VGA-show">
+                        <li><a href="#" class="VGA_NVIDIA-btn">NVIDIA<span class="fas fa-caret-down 4-1"></span></a>
+                            <ul class="VGA_NVIDIA-show">
+                                <li><a href="#">RTX3090</a></li>
+                                <li><a href="#">RTX3080Ti</a></li>
+                                <li><a href="#">RTX3080</a></li>
+                                <li><a href="#">RTX3070Ti</a></li>
+                                <li><a href="#">RTX3070</a></li>
+                                <li><a href="#">RTX3060Ti</a></li>
+                                <li><a href="#">RTX3060</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="VGA_AMD-btn">AMD<span class="fas fa-caret-down 4-2"></span></a>
+                            <ul class="VGA_AMD-show">
+                                <li><a href="#">RX6900XT</a></li>
+                                <li><a href="#">RX6800XT</a></li>
+                                <li><a href="#">RX6800</a></li>
+                                <li><a href="#">RX6700XT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="SSD-btn">SSD固態硬碟<span class="fas fa-caret-down 5"></span></a>
+                    <ul class="SSD-show">
+                        <li><a href="#" class="SSD_SATA-btn">2.5吋 SATA<span class="fas fa-caret-down 5-1"></span></a>
+                            <ul class="SSD_SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2PCIE-btn">M.2 PCIE<span class="fas fa-caret-down 5-2"></span></a>
+                            <ul class="SSD_M2PCIE-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2SATA-btn">M.2 SATA<span class="fas fa-caret-down 5-3"></span></a>
+                            <ul class="SSD_M2SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">電源供應器</a></li>
+                <li><a href="#">電腦機殼</a></li>
+                <li><a href="#">螢幕</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        // 中央處理器
+        $('.CPU-btn').click(function() {
+            $('nav ul .CPU-show').toggleClass("show1");
+            $('nav ul .1').toggleClass("rotate");
+        });
+        $('.CPU_INTEL-btn').click(function() {
+            $('nav ul .CPU_INTEL-show').toggleClass("show1-1");
+            $('nav ul .1-1').toggleClass("rotate");
+        });
+        $('.CPU_AMD-btn').click(function() {
+            $('nav ul .CPU_AMD-show').toggleClass("show1-2");
+            $('nav ul .1-2').toggleClass("rotate");
+        });
+
+        // 主機板
+        $('.MB-btn').click(function() {
+            $('nav ul .MB-show').toggleClass("show2");
+            $('nav ul .2').toggleClass("rotate");
+        });
+        $('.MB_Intel-btn').click(function() {
+            $('nav ul .MB_INTEL-show').toggleClass("show2-1");
+            $('nav ul .2-1').toggleClass("rotate");
+        });
+        $('.MB_AMD-btn').click(function() {
+            $('nav ul .MB_AMD-show').toggleClass("show2-2");
+            $('nav ul .2-2').toggleClass("rotate");
+        });
+
+        // 記憶體
+        $('.RAM-btn').click(function() {
+            $('nav ul .RAM-show').toggleClass("show3");
+            $('nav ul .3').toggleClass("rotate");
+        });
+
+        // 顯示卡
+        $('.VGA-btn').click(function() {
+            $('nav ul .VGA-show').toggleClass("show4");
+            $('nav ul .4').toggleClass("rotate");
+        });
+        $('.VGA_NVIDIA-btn').click(function() {
+            $('nav ul .VGA_NVIDIA-show').toggleClass("show4-1");
+            $('nav ul .4-1').toggleClass("rotate");
+        });
+        $('.VGA_AMD-btn').click(function() {
+            $('nav ul .VGA_AMD-show').toggleClass("show4-2");
+            $('nav ul .4-2').toggleClass("rotate");
+        });
+
+        // SSD固態硬碟
+        $('.SSD-btn').click(function() {
+            $('nav ul .SSD-show').toggleClass("show5");
+            $('nav ul .5').toggleClass("rotate");
+        });
+        $('.SSD_SATA-btn').click(function() {
+            $('nav ul .SSD_SATA-show').toggleClass("show5-1");
+            $('nav ul .5-1').toggleClass("rotate");
+        });
+        $('.SSD_M2PCIE-btn').click(function() {
+            $('nav ul .SSD_M2PCIE-show').toggleClass("show5-2");
+            $('nav ul .5-2').toggleClass("rotate");
+        });
+        $('.SSD_M2SATA-btn').click(function() {
+            $('nav ul .SSD_M2SATA-show').toggleClass("show5-3");
+            $('nav ul .5-3').toggleClass("rotate");
+        });
+
+
+        $('nav ul li').click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+
+        // function aa(result) {
+        //     alert("12312312");
+        //     for (var i = 0; i < result.length; i++) {
+
+        //         // var id_123 = document.getElementById("123");
+        //         var newDiv1 = document.createElement("div");
+        //         var newDiv2 = document.createElement("div");
+        //         var newImg = document.createElement("img");
+        //         var newDiv3 = document.createElement("div");
+
+        //         newDiv1.className = "product_box";
+        //         newDiv2.className = "product_box_new";
+        //         newImg.className = "product_img";
+        //         newDiv3.className = "product_description";
+        //         newImg.src = "https://products.autobuy.tw/IA1008020005821_6107636b.jpg";
+        //         newDiv3.innerText = result[i];
+
+        //         newDiv1.appendChild(newDiv2);
+        //         newDiv2.appendChild(newImg);
+        //         newDiv1.appendChild(newDiv3);
+        //         id_123.appendChild(newDiv1);
+        //     }
+        // }
+        window.onload = function() {
+            $.ajax({
+                url: "/api/product_info",
+                type: "GET",
+                dataType: "json",
+                success: function product_info(result) {
+                    // data = JSON.parse(result);
+                    // alert(data);
+
+                    for (var i = 0; i < result.length; i++) {
+
+                        var product_get_info = document.getElementById("product_get_info");
+
+                        var newDiv1 = document.createElement("div");
+                        var newa1 = document.createElement("a");
+                        var newDiv2 = document.createElement("div");
+                        var newImg = document.createElement("img");
+                        var newDiv3 = document.createElement("div");
+                        var newDiv4 = document.createElement("div");
+
+                        newDiv1.className = "product_box";
+                        newa1.setAttribute("href", "/product_info/product_description?id=" + result[i].pNo);
+                        newDiv2.className = "product_box_new";
+                        newImg.className = "product_img";
+                        newImg.src = result[i].image_title;
+                        newDiv3.className = "product_description";
+                        newDiv3.innerText = result[i].name;
+                        newDiv4.className = "product_price";
+                        newDiv4.innerHTML = result[i].price;
+
+                        product_get_info.appendChild(newDiv1);
+                        newDiv1.appendChild(newa1);
+                        newa1.appendChild(newDiv2);
+                        newDiv2.appendChild(newImg);
+                        newa1.appendChild(newDiv3);
+                        newDiv3.appendChild(newDiv4);
+
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

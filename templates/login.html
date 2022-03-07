@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>登入/註冊</title>
+    <link rel="stylesheet" href="static/css/login_style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="C:\Users\mnbgt\Desktop\website\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div class="Information_bar">
+        <img class="website_logo" src="C:\Users\mnbgt\Desktop\website\首頁_LOGO.png">
+        <div class="search_box">
+            <form>
+                <input type="text" placeholder="請輸入關鍵字...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        <i class="fas fa-desktop fa-2x" id="computer_news"><span class="news_icon">
+                電腦新聞&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 登入 /
+                註冊&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        <i class="fas fa-shopping-cart fa-2x" aria-hidden="true" id="cart"><span class="cart_icon"> 購物車</span></i>
+    </div> -->
+    <div id="body" class="content">
+        <div class="login_form">
+            <a href="/"><img class="login_and_register_logo" src="static/images/首頁_LOGO.png"></a>
+            <div class="header">
+                <ul class="tabs">
+                    <li class="actived">
+                        <span onclick="cc(1)" id="member_login">會員登入</span>
+                    </li>
+                    <li>
+                        <span onclick="cc(2)" id="member_register">立即註冊</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="login_box" id="aa">
+                <ul>
+                    <li>
+                        <!-- autocapitalize為自動大寫 -->
+                        <input id="loginAcc" name='帳號' class="text" type="account" placeholder="請輸入Email" autocapitalize="none" value>
+                    </li>
+                    <li>
+                        <input id="loginPwd" name='密碼' class="text" type="password" placeholder="請輸入密碼 (英文大小寫有差別)" value>
+                    </li>
+                    <!-- <li>
+                        <a id="resetPasswordLink" class="alink">忘記密碼</a>
+                    </li> -->
+                    <br>
+                    <li>
+                        <button id="btnLogin" class="btnsubmit" onclick="member_login();">登入</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="login_box" id="bb" style="display: none;">
+                <ul>
+                    <li>
+                        <input id="register_email" name="Email" class="text" type="twxt" placeholder="請輸入Email">
+                    </li>
+                    <li>
+                        <input id="register_password" name="密碼" class="text" type="password" placeholder="請輸入密碼 (英文大小寫有差別)">
+                    </li>
+                    <li>
+                        <input id="register_password_again" name="請再次輸入密碼" class="text" type="password" placeholder="請再輸入一次密碼">
+                    </li>
+                    <li>
+                        <input id="register_name" name="姓名" class="text" type="text" placeholder="請輸入姓名">
+                    </li>
+                    <li>
+                        <input id="register_phone" name="手機號碼" class="text" type="text" placeholder="請輸入手機號碼">
+                    </li>
+                    <li>
+                        <input id="register_address" name="地址" class="text" type="text" placeholder="請輸入地址">
+                    </li>
+                    <li>
+                        <button id="btnRegister" class="btnsubmit" onclick="member_register();">註冊</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function cc(status) {
+        let aa = document.getElementById("aa");
+        let bb = document.getElementById("bb");
+        let member_login = document.getElementById("member_login");
+        let member_register = document.getElementById("member_register");
+
+
+        if (status == 2) {
+            aa.style.display = "none";
+            bb.style.display = "block";
+            member_login.style.color = "#aaa";
+            member_register.style.color = "#06c";
+        } else {
+            aa.style.display = "block";
+            bb.style.display = "none";
+            member_login.style.color = "#06c";
+            member_register.style.color = "#aaa";
+        }
+    }
+    // function get_account_data() {
+    //     $.ajax({
+    //         url: 'http://127.0.0.1:5000/login',
+    //         type: 'POST',
+    //         data: {
+    //             name: document.querySelector('#loginAcc').value.toString()
+    //         }
+    //     })
+    // }
+</script>
+<script src="/static/js/ajax.js"></script>
+
+
+</html>

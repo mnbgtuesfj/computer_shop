@@ -1,0 +1,786 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    left: 0;
+    background: #1b1b1b;
+    box-shadow: 5px 0px 10px hsla(240, 40%, 15%, .6);
+}
+
+.sidebar .text {
+    /* margin-bottom: -30px; */
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 65px;
+    text-align: center;
+    background: #1e1e1e;
+    letter-spacing: 5px;
+}
+
+nav ul {
+    background: #1b1b1b;
+    height: 100%;
+    width: 100%;
+    list-style-type: none;
+}
+
+nav ul li {
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 40px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+nav ul li.active a {
+    color: #00CCCC;
+    background: #1e1e1e;
+    border-left-color: #00CCCC;
+}
+
+nav ul ul {
+    position: static;
+    display: none;
+}
+
+
+/* 從這裡開始 */
+
+nav ul .CPU-show.show1 {
+    display: block;
+}
+
+nav ul .CPU_INTEL-show.show1-1 {
+    display: block;
+}
+
+nav ul .CPU_AMD-show.show1-2 {
+    display: block;
+}
+
+nav ul .MB-show.show2 {
+    display: block;
+}
+
+nav ul .MB_INTEL-show.show2-1 {
+    display: block;
+}
+
+nav ul .MB_AMD-show.show2-2 {
+    display: block;
+}
+
+nav ul .RAM-show.show3 {
+    display: block;
+}
+
+nav ul .VGA-show.show4 {
+    display: block;
+}
+
+nav ul .VGA_NVIDIA-show.show4-1 {
+    display: block;
+}
+
+nav ul .VGA_AMD-show.show4-2 {
+    display: block;
+}
+
+nav ul .SSD-show.show5 {
+    display: block;
+}
+
+nav ul .SSD_SATA-show.show5-1 {
+    display: block;
+}
+
+nav ul .SSD_M2PCIE-show.show5-2 {
+    display: block;
+}
+
+nav ul .SSD_M2SATA-show.show5-3 {
+    display: block;
+}
+
+
+/* 到這裡結束 */
+
+nav ul ul li {
+    line-height: 42px;
+    border-bottom: none;
+}
+
+nav ul ul li a {
+    font-size: 17px;
+    color: #e6e6e6;
+    padding-left: 80px;
+}
+
+nav ul li.active ul li a {
+    color: #e6e6e6;
+    background: #1b1b1b;
+    border-left-color: transparent;
+}
+
+
+/* nav ul li:hover{
+    background: burlywood;
+} */
+
+nav ul ul li a:hover {
+    color: #00CCCC!important;
+    background: #1e1e1e!important;
+}
+
+nav ul li a span {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: transform 0.4s;
+}
+
+nav ul li a span.rotate {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.Information_bar {
+    height: 70px;
+    background-color: #dedede;
+}
+
+.sidebar_new {
+    margin: -70px;
+}
+
+#computer_news {
+    position: absolute;
+    top: 15px;
+    right: 400px;
+}
+
+#user {
+    position: absolute;
+    top: 15px;
+    right: 190px;
+}
+
+#cart {
+    position: absolute;
+    top: 15px;
+    right: 50px;
+}
+
+.news_icon {
+    font-size: 16px;
+}
+
+.user_icon {
+    font-size: 16px;
+}
+
+.cart_icon {
+    font-size: 16px;
+}
+
+
+/* 從這裡開始，搜尋頁面 */
+
+.search_box {
+    position: relative;
+    margin: 20px 10px;
+    top: 35px;
+    left: 250px;
+    transform: translate(-50%, -50%);
+    width: 500px;
+}
+
+input {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.product_search {
+    width: 190px;
+    height: 30px;
+    left: -10px;
+    border: none;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+    padding: 15px;
+}
+
+input[type="submit"] {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    left: -15px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #9C9C9C;
+    color: #fff;
+    font-size: 12px;
+}
+
+input[type="submit"]:hover {
+    background: #454545;
+    transition: .5s;
+}
+
+
+/* 在這裡結束，搜尋頁面 */
+
+#carouselExampleIndicators {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.website_logo {
+    position: absolute;
+    left: 50%;
+    width: 180px;
+    top: -5px;
+}
+
+
+/* 從這裡開始，輪播 */
+
+#slider {
+    width: 81%;
+    position: absolute;
+    top: 100px;
+    left: 308px;
+}
+
+#slider input[type=radio] {
+    /* 隱藏 */
+    display: none;
+}
+
+#slider label {
+    cursor: pointer;
+    /* text-decoration: none; */
+}
+
+#slides {
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+#overflow {
+    width: 100%;
+    overflow: hidden;
+}
+
+#slide1:checked~#slides .inner {
+    margin-left: 0;
+}
+
+#slide2:checked~#slides .inner {
+    margin-left: -100%;
+}
+
+#slide3:checked~#slides .inner {
+    margin-left: -200%;
+}
+
+#slide4:checked~#slides .inner {
+    margin-left: -300%;
+}
+
+#slides .inner {
+    /* cubic-bezier，調整輪播每一頁的速率。最後的值都為1 */
+    transition: margin-left 800ms cubic-bezier(0.5, 0, 0.5, 1);
+    width: 400%;
+    line-height: 0;
+    height: 500px;
+}
+
+#slides .slide {
+    width: 25%;
+    float: left;
+    display: flex;
+    /* justify-content主要以主軸線來做排版，參考網站https://w3c.hexschool.com/flexbox/4a029043 */
+    justify-content: center;
+    /* align-items主要以交錯軸線來做排版，參考網站https://w3c.hexschool.com/flexbox/87d66dc4 */
+    align-items: center;
+    height: 100%;
+    color: #fff;
+}
+
+
+/* 更換輪播頁面的按鈕位置，controls */
+
+#controls {
+    margin: -180px 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+}
+
+#controls label {
+    /* transition: opacity 0.2s ease-out; */
+    display: none;
+    width: 50px;
+    height: 50px;
+    /* opacity是透明度，數值1是不透明，0.5是半透明，0是透明 */
+    opacity: .5;
+}
+
+#controls label:hover {
+    opacity: 1;
+}
+
+
+/* 選取器，nth-child是從前面開始選 */
+
+#slide1:checked~#controls label:nth-child(2),
+#slide2:checked~#controls label:nth-child(3),
+#slide3:checked~#controls label:nth-child(4),
+#slide4:checked~#controls label:nth-child(1) {
+    background: url(https://image.flaticon.com/icons/svg/130/130884.svg);
+    float: right;
+    margin: -100px -50px 0 0;
+    display: block;
+}
+
+
+/* 選取器，nth-last-child是從後面開始選 */
+
+#slide1:checked~#controls label:nth-last-child(1),
+#slide2:checked~#controls label:nth-last-child(4),
+#slide3:checked~#controls label:nth-last-child(3),
+#slide4:checked~#controls label:nth-last-child(2) {
+    background: url(https://image.flaticon.com/icons/svg/130/130882.svg);
+    float: left;
+    margin: -100px 0 0 -50px;
+    display: block;
+}
+
+#bullets {
+    position: absolute;
+    z-index: 1;
+    top: 450px;
+    left: 45%;
+    text-align: center;
+}
+
+#bullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+#slide1:checked~#bullets label:nth-child(1),
+#slide2:checked~#bullets label:nth-child(2),
+#slide3:checked~#bullets label:nth-child(3),
+#slide4:checked~#bullets label:nth-child(4) {
+    background: #fff;
+}
+
+
+/*如果螢幕寬度為 900px 以下，就套用 css 設定*/
+
+@media screen and (max-width: 900px) {
+    #slide1:checked~#controls label:nth-child(2),
+    #slide2:checked~#controls label:nth-child(3),
+    #slide3:checked~#controls label:nth-child(4),
+    #slide4:checked~#controls label:nth-child(1),
+    #slide1:checked~#controls label:nth-last-child(2),
+    #slide2:checked~#controls label:nth-last-child(3),
+    #slide3:checked~#controls label:nth-last-child(4),
+    #slide4:checked~#controls label:nth-last-child(1) {
+        margin: 0;
+    }
+    #slides {
+        max-width: calc(100% - 140px);
+        margin: 0 auto;
+    }
+}
+
+
+/* 到這裡結束，輪播 */
+
+
+/* 電腦新聞，開始 */
+
+.product_news {
+    position: absolute;
+    width: 85%;
+    height: 75%;
+    top: 70%;
+    left: 15%;
+}
+
+.heading {
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+
+.heading:before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 1em;
+    position: absolute;
+    left: 20px;
+    top: .25em;
+    background-color: #23803d;
+}
+
+.product_box {
+    width: 25%;
+    height: 50%;
+    float: left;
+}
+
+.product_box_new {
+    margin: 0px 20px 0px 20px;
+    overflow: hidden;
+}
+
+.product_img {
+    cursor: pointer;
+    width: 100%;
+    transition: transform 1s;
+    margin-bottom: -5px;
+}
+
+.product_description {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FAFAFA;
+    margin: 0px 20px;
+    padding: 5px 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+.product_description:hover {
+    color: green;
+}
+
+.product_img:hover {
+    transform: scale(1.1);
+}
+
+
+/* 電腦新聞，結束 */
+
+
+/* 麵包屑，開始 */
+
+.breadcrumbs {
+    width: 85%;
+    position: absolute;
+    margin: 40px 0 0 270px;
+}
+
+
+/* 麵包屑，結束 */
+
+
+/* 商品box，開始 */
+
+.product_info_box {
+    /* border: 3px black solid; */
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+
+.product_info_image {
+    border: 2px solid #c7c7c7;
+    width: 32%;
+    height: 350px;
+    margin: 1%;
+    float: left;
+}
+
+#product_info_image {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.product_info_title {
+    width: 60%;
+    height: 100%;
+    margin-left: 35%;
+    border-bottom: 2px #c7c7c7 solid;
+    line-height: 2;
+}
+
+.product_info_feature {
+    border-bottom: 2px solid #c7c7c7;
+    width: 60%;
+    margin-left: 35%;
+    line-height: 2;
+}
+
+.product_info_title p {
+    font-size: 22px;
+    font-family: Microsoft JhengHei;
+    font-weight: bold;
+}
+
+.product_info_title p+p {
+    font-size: 34px;
+    font-family: Microsoft JhengHei;
+    font-weight: 900;
+    color: red;
+}
+
+.product_info_feature h3 {
+    position: absolute;
+}
+
+.product_info_feature ul {
+    margin: 0px 130px;
+}
+
+.product_info_price {
+    width: 60%;
+    margin-left: 35%;
+    border-bottom: 2px #c7c7c7 solid;
+}
+
+.product_info_price h3 {
+    position: absolute;
+}
+
+.product_info_price strong {
+    font-size: 40px;
+    color: red;
+    margin-left: 130px;
+}
+
+.product_info_amount {
+    width: 60%;
+    margin-left: 35%;
+    border-bottom: 2px #c7c7c7 solid;
+}
+
+.product_info_amount h3 {
+    position: absolute;
+}
+
+
+/* 商品數量增減，開始 */
+
+.quantity {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* padding: 0; */
+    margin-left: 14%;
+}
+
+.quantity__minus,
+.quantity__plus {
+    display: block;
+    width: 60px;
+    height: 50px;
+    /* margin: 50px; */
+    background: #dee0ee;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+.quantity__minus:hover,
+.quantity__plus:hover {
+    background: #575b71;
+    color: #fff;
+}
+
+.quantity__minus {
+    border-radius: 10px;
+}
+
+.quantity__plus {
+    border-radius: 10px;
+}
+
+.quantity__input {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    /* padding: 0; */
+    text-align: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    background: #fff;
+    /* color: #8184a1; */
+}
+
+.quantity__minus:link,
+.quantity__plus:link {
+    color: #8184a1;
+}
+
+.quantity__minus:visited,
+.quantity__plus:visited {
+    color: #fff;
+}
+
+
+/* 商品數量增減，結束 */
+
+.product_info_button {
+    width: 60%;
+    /* border-bottom: 2px #c7c7c7 solid; */
+    margin-left: 43%;
+}
+
+.productPay,
+.addCart {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    background: white;
+    border: 2px #c7c7c7 solid;
+    font-weight: bold;
+    top: 40px;
+    margin: 0px 5px 0px 0px;
+    border-radius: 10px;
+}
+
+.productPay:hover,
+.addCart:hover {
+    color: #00CCCC;
+    cursor: pointer;
+}
+
+
+/* 頁籤，開始 */
+
+.panel-group {
+    margin-top: 50px;
+}
+
+.panel-control {
+    opacity: 0;
+}
+
+.tab-group label {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #ccc;
+    bottom: -1px;
+    position: relative;
+    cursor: pointer;
+}
+
+.content-group {
+    border: 1px solid #ccc;
+    padding: 20px;
+    /* text-align: center;
+    text-align: -webkit-center; */
+}
+
+.content1,
+.content2,
+.content3,
+.content4 {
+    display: none;
+}
+
+#radio1:checked~.tab-group [for="radio1"],
+#radio2:checked~.tab-group [for="radio2"],
+#radio3:checked~.tab-group [for="radio3"],
+#radio4:checked~.tab-group [for="radio4"] {
+    background-color: #fff;
+}
+
+#radio1:checked~.content-group .content1,
+#radio2:checked~.content-group .content2,
+#radio3:checked~.content-group .content3,
+#radio4:checked~.content-group .content4 {
+    display: block
+}
+
+
+/* 頁籤，結束 */
+
+
+/* 商品規格，開始 */
+
+.content1 img+img {
+    width: 100%;
+}
+
+table {
+    /* border: 1px solid #c7c7c7; */
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+tr>td:first-child {
+    background-color: #c7c7c7;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+/* 商品規格，結束 */
+
+.content1 {
+    text-align: center;
+}
+
+.content2 h2 {
+    color: #f60;
+}
+
+.span_new {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* 商品box，結束 */

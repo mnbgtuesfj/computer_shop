@@ -1,0 +1,23 @@
+.menu{
+    width: 300px;
+    height: 1000px;
+    background-color: #dcdcdc;
+}
+body{
+    margin:0px;
+}
+.LOGO{
+    width:100%;
+    padding-top:40px
+}
+.search{
+    height: 30px;
+    margin: 20px 0px 0px 20%;
+    border-style: none;
+    box-shadow: 0px 0px 5px 0px #aaaaaa;
+}
+.search_icon{
+    width: 9%;
+    float: right;
+    padding: 8% 8% 0px 0px;
+}

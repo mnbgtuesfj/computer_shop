@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>購物網站</title>
+    <link rel="stylesheet" href="static/css/index_style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="C:\Users\mnbgt\Desktop\website\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="popup">
+        <p class="fas fa-folder fa-2x">訂單查詢</p>
+        <table id="table_new">
+            <tr>
+                <td>訂單編號</td>
+                <td>訂單名稱</td>
+                <td>數量</td>
+                <td>購買日期</td>
+                <td>訂購人姓名</td>
+                <td>送貨地址</td>
+                <td>聯絡電話</td>
+                <td>Email</td>
+            </tr>
+        </table>
+        <button class="exit_window" onclick="exit()">按我離開</button>
+    </div>
+    <div class="Information_bar">
+        <a id="this_value_back" href="/">
+            <img class="website_logo" src="static/images/首頁_LOGO.PNG">
+        </a>
+        <a id="login" href="/login" style="text-decoration: none; color: black; display:block">
+            <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 登入 /
+          註冊&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>|
+        <a id="logout" href="" style="text-decoration: none; color: black; display: none;" onclick="logout()">
+            <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 歡迎登入，登出請點這裡!&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>|
+        <a href="/cart" style="text-decoration: none; color: black;">
+            <i class="fas fa-shopping-cart fa-2x" aria-hidden="true" id="cart"><span class="cart_icon"> 購物車</span></i>
+        </a>
+        <a id="login_order_search" style="text-decoration: none; color: black; display: none; cursor: pointer;">
+            <i class="fas fa-folder fa-2x" aria-hidden="true" id="order_search"><span class="order_search_icon"> 訂單查詢&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>
+    </div>
+
+    <div class="sidebar_new">
+        <nav class="sidebar" style="float: left;">
+            <div class="text">電腦零組件分類</div>
+            <!-- 搜尋 -->
+            <!-- <div class="search_box">
+        <form>
+          <input type="text" placeholder="請輸入關鍵字">
+          <input type="submit" value="搜尋">
+        </form>
+      </div> -->
+            <ul>
+                <li><a href="#" class="CPU-btn">中央處理器<span class="fas fa-caret-down 1"></span></a>
+                    <ul class="CPU-show">
+                        <li><a href="#" class="CPU_INTEL-btn">Intel<span class="fas fa-caret-down 1-1"></span></a>
+                            <ul class="CPU_INTEL-show">
+                                <li><a href="/product_info">Core i9系列(第11代)</a></li>
+                                <li><a href="#">Core i7系列(第11代)</a></li>
+                                <li><a href="#">Core i5系列(第11代)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="CPU_AMD-btn">AMD<span class="fas fa-caret-down 1-2"></span></a>
+                            <ul class="CPU_AMD-show">
+                                <li><a href="#">AMD Ryzen 9(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 7(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 5(5000系列)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="MB-btn">主機板<span class="fas fa-caret-down 2"></span></a>
+                    <ul class="MB-show">
+                        <li><a href="#" class="MB_Intel-btn">Intel<span class="fas fa-caret-down 2-1"></span></a>
+                            <ul class="MB_INTEL-show">
+                                <li><a href="#">H410 | 1200腳位</a></li>
+                                <li><a href="#">H510 | 1200腳位</a></li>
+                                <li><a href="#">H570 | 1200腳位</a></li>
+                                <li><a href="#">B460 | 1200腳位</a></li>
+                                <li><a href="#">B560 | 1200腳位</a></li>
+                                <li><a href="#">Z490 | 1200腳位</a></li>
+                                <li><a href="#">Z590 | 1200腳位</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="MB_AMD-btn">AMD<span class="fas fa-caret-down 2-2"></span></a>
+                            <ul class="MB_AMD-show">
+                                <li><a href="#">AM4 X570</a></li>
+                                <li><a href="#">AM4 B550</a></li>
+                                <li><a href="#">AM4 A520</a></li>
+                                <li><a href="#">AM4 X470</a></li>
+                                <li><a href="#">AM4 B450</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="RAM-btn">記憶體<span class="fas fa-caret-down 3"></span></a>
+                    <ul class="RAM-show">
+                        <li><a href="#">DDR4-8GB</a></li>
+                        <li><a href="#">DDR4-16GB</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="VGA-btn">顯示卡<span class="fas fa-caret-down 4"></span></a>
+                    <ul class="VGA-show">
+                        <li><a href="#" class="VGA_NVIDIA-btn">NVIDIA<span class="fas fa-caret-down 4-1"></span></a>
+                            <ul class="VGA_NVIDIA-show">
+                                <li><a href="#">RTX3090</a></li>
+                                <li><a href="#">RTX3080Ti</a></li>
+                                <li><a href="#">RTX3080</a></li>
+                                <li><a href="#">RTX3070Ti</a></li>
+                                <li><a href="#">RTX3070</a></li>
+                                <li><a href="#">RTX3060Ti</a></li>
+                                <li><a href="#">RTX3060</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="VGA_AMD-btn">AMD<span class="fas fa-caret-down 4-2"></span></a>
+                            <ul class="VGA_AMD-show">
+                                <li><a href="#">RX6900XT</a></li>
+                                <li><a href="#">RX6800XT</a></li>
+                                <li><a href="#">RX6800</a></li>
+                                <li><a href="#">RX6700XT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="SSD-btn">SSD固態硬碟<span class="fas fa-caret-down 5"></span></a>
+                    <ul class="SSD-show">
+                        <li><a href="#" class="SSD_SATA-btn">2.5吋 SATA<span class="fas fa-caret-down 5-1"></span></a>
+                            <ul class="SSD_SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2PCIE-btn">M.2 PCIE<span class="fas fa-caret-down 5-2"></span></a>
+                            <ul class="SSD_M2PCIE-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2SATA-btn">M.2 SATA<span class="fas fa-caret-down 5-3"></span></a>
+                            <ul class="SSD_M2SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#">電源供應器</a></li>
+                <li><a href="#">電腦機殼</a></li>
+                <li><a href="#">螢幕</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- 從這裡開始，輪播 -->
+    <div id="slider">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <div id="slides">
+            <div id="overflow">
+                <div class="inner">
+                    <div class="slide slide_1">
+                        <img src="static\images\carousel_1.jpeg">
+                    </div>
+                    <div class="slide slide_2">
+                        <img src="static\images\carousel_2.jpeg">
+                    </div>
+                    <div class="slide slide_3">
+                        <img src="static\images\carousel_3.jpeg">
+                    </div>
+                    <div class="slide slide_4">
+                        <img src="static\images\carousel_4.jpeg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- controls是更換輪播頁面的按鈕(> or <) -->
+        <div id="controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+        </div>
+        <!-- bullets是更換輪播頁面的按鈕(圓形radio) -->
+        <div id="bullets">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+        </div>
+    </div>
+    <!-- 到這裡結束，輪播 -->
+    <div class="u-gapNextV--lg">
+        <div class="l-heading">電腦新聞</div>>
+        <div class="l-appearArea">
+            <div class="l-appearArea__content u-overflow">
+                <div class="l-cols">
+                    <div class="l-cols__4">
+                        123
+                    </div>
+                    <div class="l-cols__4">
+                        123
+                    </div>
+                    <div class="l-cols__4">
+                        123
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 電腦新聞 -->
+    <div class="product_news">
+        <div>
+            <h1 class="heading">
+                電腦新聞
+            </h1>
+        </div>
+        <div class="product_box">
+            <a href="/product_news_1">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/7253cf568396086df2b5f0f0b7880120.jpg">
+                </div>
+                <div class="product_description">
+                    【上班一定要看】5種Chrome摸魚擴充功能 學會變高手
+                </div>
+            </a>
+        </div>
+
+        <div class="product_box">
+            <a href="/product_news_2">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/a80c7969dd8fbb85c26c9bbac1c32cbf.jpg">
+                </div>
+                <div class="product_description">
+                    CORSAIR H170i ELITE CAPELLIX AIO CPU 水冷散熱器實測 最強賊船冷卻旗艦出航
+                </div>
+            </a>
+        </div>
+
+        <div class="product_box">
+            <a href="/product_news_3">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/843e2acf8fa3a0a2d49645903e193714.jpg">
+                </div>
+                <div class="product_description">
+                    LG UltraFine Display Ergo 32UN880 人體工學螢幕開箱 顯示視野隨你調整
+                </div>
+            </a>
+        </div>
+
+        <div class="product_box">
+            <a href="/product_news_4">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/2b8e4b57a24b79999a52da555c1486fd.jpg">
+                </div>
+                <div class="product_description">
+                    ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡開箱實測 全面升級的中階性能選擇
+                </div>
+            </a>
+        </div>
+        <div class="product_box">
+            <a href="/product_news_5">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/c9ae8cc714a1dcc61ab56e23243e65a2.jpg">
+                </div>
+                <div class="product_description">
+                    TP-Link Archer GX90 WiFi 6 電競路由器開箱體驗 居家防疫時期的必備網路良藥
+                </div>
+            </a>
+        </div>
+
+        <div class="product_box">
+            <a href="/product_news_6">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/4649a1fe981cc9aace83954506c3b426.jpg">
+                </div>
+                <div class="product_description">
+                    BenQ PD2725U 螢幕開箱測試 以多模式提供色彩準度的專業選擇
+                </div>
+            </a>
+        </div>
+        <div class="product_box">
+            <a href="/product_news_7">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/06d201fc153b04a98a6103eb17a9054f.jpg">
+                </div>
+                <div class="product_description">
+                    ROG RYUJIN II 360 AIO 水冷散熱器實測 將敗家信仰提升到最高點
+                </div>
+            </a>
+        </div>
+
+        <div class="product_box">
+            <a href="/product_news_8">
+                <div class="product_box_new">
+                    <img class="product_img" src="https://attach.mobile01.com/image/news/63536092d75bad78b1ab20378becf6f3.jpg">
+                </div>
+                <div class="product_description">
+                    ROG SWIFT PG32UQX 電競螢幕開箱體驗 以 Mini LED 技術達成超細膩畫質演出
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- 電腦新聞 -->
+
+    <script>
+        // 中央處理器
+        $('.CPU-btn').click(function() {
+            $('nav ul .CPU-show').toggleClass("show1");
+            $('nav ul .1').toggleClass("rotate");
+        });
+        $('.CPU_INTEL-btn').click(function() {
+            $('nav ul .CPU_INTEL-show').toggleClass("show1-1");
+            $('nav ul .1-1').toggleClass("rotate");
+        });
+        $('.CPU_AMD-btn').click(function() {
+            $('nav ul .CPU_AMD-show').toggleClass("show1-2");
+            $('nav ul .1-2').toggleClass("rotate");
+        });
+
+        // 主機板
+        $('.MB-btn').click(function() {
+            $('nav ul .MB-show').toggleClass("show2");
+            $('nav ul .2').toggleClass("rotate");
+        });
+        $('.MB_Intel-btn').click(function() {
+            $('nav ul .MB_INTEL-show').toggleClass("show2-1");
+            $('nav ul .2-1').toggleClass("rotate");
+        });
+        $('.MB_AMD-btn').click(function() {
+            $('nav ul .MB_AMD-show').toggleClass("show2-2");
+            $('nav ul .2-2').toggleClass("rotate");
+        });
+
+        // 記憶體
+        $('.RAM-btn').click(function() {
+            $('nav ul .RAM-show').toggleClass("show3");
+            $('nav ul .3').toggleClass("rotate");
+        });
+
+        // 顯示卡
+        $('.VGA-btn').click(function() {
+            $('nav ul .VGA-show').toggleClass("show4");
+            $('nav ul .4').toggleClass("rotate");
+        });
+        $('.VGA_NVIDIA-btn').click(function() {
+            $('nav ul .VGA_NVIDIA-show').toggleClass("show4-1");
+            $('nav ul .4-1').toggleClass("rotate");
+        });
+        $('.VGA_AMD-btn').click(function() {
+            $('nav ul .VGA_AMD-show').toggleClass("show4-2");
+            $('nav ul .4-2').toggleClass("rotate");
+        });
+
+        // SSD固態硬碟
+        $('.SSD-btn').click(function() {
+            $('nav ul .SSD-show').toggleClass("show5");
+            $('nav ul .5').toggleClass("rotate");
+        });
+        $('.SSD_SATA-btn').click(function() {
+            $('nav ul .SSD_SATA-show').toggleClass("show5-1");
+            $('nav ul .5-1').toggleClass("rotate");
+        });
+        $('.SSD_M2PCIE-btn').click(function() {
+            $('nav ul .SSD_M2PCIE-show').toggleClass("show5-2");
+            $('nav ul .5-2').toggleClass("rotate");
+        });
+        $('.SSD_M2SATA-btn').click(function() {
+            $('nav ul .SSD_M2SATA-show').toggleClass("show5-3");
+            $('nav ul .5-3').toggleClass("rotate");
+        });
+
+
+        $('nav ul li').click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+
+        window.onload = function() {
+            $.ajax({
+                url: "/api/login",
+                type: "GET",
+                success: function(result) {
+                    let login = document.getElementById("login");
+                    login.style.display = "none";
+
+                    let logout = document.getElementById("logout");
+                    logout.style.display = "block";
+
+                    let login_order_search = document.getElementById("login_order_search");
+                    login_order_search.style.display = "block";
+                }
+            })
+        }
+
+        function logout() {
+            $.ajax({
+                url: "/api/logout",
+                type: "GET",
+            })
+        }
+        // 遮罩
+        function initMask() {
+            var doc = document.documentElement;
+            var mask = document.getElementById("mask");
+
+            var relHeight = (doc.clientHeight > doc.scrollHeight) ? doc.clientHeight : doc.scrollHeight;
+            var relWidth = (doc.clientWidth > doc.scrollWidth) ? doc.clientWidth : doc.scrollWidth;
+
+            mask.style.height = relHeight + "px";
+            mask.style.width = relWidth + "px";
+        }
+        initMask(); //先執行使得mask覆蓋整個頁面
+        window.onresize = initMask;
+
+        let test = document.getElementById('login_order_search');
+        test.addEventListener('click', toggleMaskAndPopup);
+
+        function toggleMaskAndPopup() {
+            let mask = document.getElementById('mask'),
+                popup = document.getElementById('popup'),
+                displayValue = document.defaultView.getComputedStyle(mask, null)['display'],
+                flag = !(displayValue === 'none');
+            if (!flag) {
+                mask.style.display = 'block';
+                popup.style.display = 'block';
+            } else {
+                mask.style.display = 'none';
+                popup.style.display = 'none';
+            }
+        }
+        // let exit_window = document.getElementsByClassName("exit_window");
+        // exit_window.onclick = function() {
+        //     toggleMaskAndPopup();
+        // }
+        function exit() {
+            toggleMaskAndPopup();
+        }
+        $.ajax({
+            url: "/api/order_search",
+            type: "GET",
+            dataType: "json",
+            success: function(result) {
+                for (let i = 0; i < result.length; i++) {
+                    let table_new = document.getElementById("table_new");
+
+                    let tr_1 = document.createElement("tr");
+                    table_new.appendChild(tr_1);
+
+                    let order_number = document.createElement("td");
+                    order_number.innerHTML = result[i].order_number;
+                    tr_1.appendChild(order_number);
+
+                    let pName = document.createElement("td");
+                    pName.innerHTML = result[i].pName;
+                    tr_1.appendChild(pName);
+
+                    let amount = document.createElement("td");
+                    amount.innerHTML = result[i].amount;
+                    tr_1.appendChild(amount);
+
+                    let purchase_date = document.createElement("td");
+                    purchase_date.innerHTML = result[i].purchase_date;
+                    tr_1.appendChild(purchase_date);
+
+                    let Purchaser = document.createElement("td");
+                    Purchaser.innerHTML = result[i].Purchaser;
+                    tr_1.appendChild(Purchaser);
+
+                    let address = document.createElement("td");
+                    address.innerHTML = result[i].address;
+                    tr_1.appendChild(address);
+
+                    let phone = document.createElement("td");
+                    phone.innerHTML = result[i].phone;
+                    tr_1.appendChild(phone);
+
+                    let email = document.createElement("td");
+                    email.innerHTML = result[i].email;
+                    tr_1.appendChild(email);
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

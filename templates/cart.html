@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>購物車</title>
+    <link rel="stylesheet" href="static/css/cart_style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="C:\Users\mnbgt\Desktop\website\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Information_bar">
+        <a href="/"><img class="website_logo" src="static\images\首頁_LOGO.png"></a>
+        <a href="/login" style="text-decoration: none; color: black">
+            <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 登入 /
+                    註冊&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>
+        <a href="/cart" style="text-decoration: none; color: black">
+            <i class="fas fa-shopping-cart fa-2x" aria-hidden="true" id="cart"><span class="cart_icon"> 購物車</span></i>
+        </a>
+    </div>
+    <div class="sidebar_new">
+        <nav class="sidebar" style="float: left;">
+            <div class="text">電腦零組件分類</div>
+            <!-- 搜尋 -->
+            <!-- <div class="search_box">
+                <form>
+                    <input type="text" placeholder="請輸入關鍵字">
+                    <input type="submit" value="搜尋">
+                </form>
+            </div> -->
+            <ul>
+                <li><a href="#" class="CPU-btn">中央處理器<span class="fas fa-caret-down 1"></span></a>
+                    <ul class="CPU-show">
+                        <li><a href="#" class="CPU_INTEL-btn">Intel<span class="fas fa-caret-down 1-1"></span></a>
+                            <ul class="CPU_INTEL-show">
+                                <li><a href="/product_info">Core i9系列(第11代)</a></li>
+                                <li><a href="#">Core i7系列(第11代)</a></li>
+                                <li><a href="#">Core i5系列(第11代)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="CPU_AMD-btn">AMD<span class="fas fa-caret-down 1-2"></span></a>
+                            <ul class="CPU_AMD-show">
+                                <li><a href="#">AMD Ryzen 9(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 7(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 5(5000系列)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="MB-btn">主機板<span class="fas fa-caret-down 2"></span></a>
+                    <ul class="MB-show">
+                        <li><a href="#" class="MB_Intel-btn">Intel<span class="fas fa-caret-down 2-1"></span></a>
+                            <ul class="MB_INTEL-show">
+                                <li><a href="#">H410 | 1200腳位</a></li>
+                                <li><a href="#">H510 | 1200腳位</a></li>
+                                <li><a href="#">H570 | 1200腳位</a></li>
+                                <li><a href="#">B460 | 1200腳位</a></li>
+                                <li><a href="#">B560 | 1200腳位</a></li>
+                                <li><a href="#">Z490 | 1200腳位</a></li>
+                                <li><a href="#">Z590 | 1200腳位</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="MB_AMD-btn">AMD<span class="fas fa-caret-down 2-2"></span></a>
+                            <ul class="MB_AMD-show">
+                                <li><a href="#">AM4 X570</a></li>
+                                <li><a href="#">AM4 B550</a></li>
+                                <li><a href="#">AM4 A520</a></li>
+                                <li><a href="#">AM4 X470</a></li>
+                                <li><a href="#">AM4 B450</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="RAM-btn">記憶體<span class="fas fa-caret-down 3"></span></a>
+                    <ul class="RAM-show">
+                        <li><a href="#">DDR4-8GB</a></li>
+                        <li><a href="#">DDR4-16GB</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="VGA-btn">顯示卡<span class="fas fa-caret-down 4"></span></a>
+                    <ul class="VGA-show">
+                        <li><a href="#" class="VGA_NVIDIA-btn">NVIDIA<span class="fas fa-caret-down 4-1"></span></a>
+                            <ul class="VGA_NVIDIA-show">
+                                <li><a href="#">RTX3090</a></li>
+                                <li><a href="#">RTX3080Ti</a></li>
+                                <li><a href="#">RTX3080</a></li>
+                                <li><a href="#">RTX3070Ti</a></li>
+                                <li><a href="#">RTX3070</a></li>
+                                <li><a href="#">RTX3060Ti</a></li>
+                                <li><a href="#">RTX3060</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="VGA_AMD-btn">AMD<span class="fas fa-caret-down 4-2"></span></a>
+                            <ul class="VGA_AMD-show">
+                                <li><a href="#">RX6900XT</a></li>
+                                <li><a href="#">RX6800XT</a></li>
+                                <li><a href="#">RX6800</a></li>
+                                <li><a href="#">RX6700XT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="SSD-btn">SSD固態硬碟<span class="fas fa-caret-down 5"></span></a>
+                    <ul class="SSD-show">
+                        <li><a href="#" class="SSD_SATA-btn">2.5吋 SATA<span class="fas fa-caret-down 5-1"></span></a>
+                            <ul class="SSD_SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2PCIE-btn">M.2 PCIE<span class="fas fa-caret-down 5-2"></span></a>
+                            <ul class="SSD_M2PCIE-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2SATA-btn">M.2 SATA<span class="fas fa-caret-down 5-3"></span></a>
+                            <ul class="SSD_M2SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">電源供應器</a></li>
+                <li><a href="#">電腦機殼</a></li>
+                <li><a href="#">螢幕</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="cart_info">
+        <div class="cart_step">
+            <ul>
+                <li>1. 訂購項目</li>
+                <li class="cart_step_second">2. 填寫訂購資料</li>
+                <li>3. 完成訂購</li>
+            </ul>
+        </div>
+        <div class="cart_product_detail">
+            <table class="shopping_cart">
+                <tbody id="tbody_new">
+                    <tr>
+                        <th colspan="2" class="prod_name">商品名稱</th>
+                        <th class="payment_method">付款方式</th>
+                        <th class="unit_price">單價</th>
+                        <th class="qty">數量</th>
+                        <th class="subtotal">小計</th>
+                        <th class="function">管理</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="product_total">
+            <p class="product_sum">
+                總金額:<span style="color: red;">$<span id="sum1"></span></span>
+            </p>
+        </div>
+        <div>
+            <button class="product_info_btn" id="next" onclick="next_btn();">下一步</button>
+            <button class="product_info_btn " onclick="location.href='/' ;">繼續購物</button>
+        </div>
+    </div>
+    <script>
+        // 中央處理器
+        $('.CPU-btn').click(function() {
+            $('nav ul .CPU-show').toggleClass("show1");
+            $('nav ul .1').toggleClass("rotate");
+        });
+        $('.CPU_INTEL-btn').click(function() {
+            $('nav ul .CPU_INTEL-show').toggleClass("show1-1");
+            $('nav ul .1-1').toggleClass("rotate");
+        });
+        $('.CPU_AMD-btn').click(function() {
+            $('nav ul .CPU_AMD-show').toggleClass("show1-2");
+            $('nav ul .1-2').toggleClass("rotate");
+        });
+
+        // 主機板
+        $('.MB-btn').click(function() {
+            $('nav ul .MB-show').toggleClass("show2");
+            $('nav ul .2').toggleClass("rotate");
+        });
+        $('.MB_Intel-btn').click(function() {
+            $('nav ul .MB_INTEL-show').toggleClass("show2-1");
+            $('nav ul .2-1').toggleClass("rotate");
+        });
+        $('.MB_AMD-btn').click(function() {
+            $('nav ul .MB_AMD-show').toggleClass("show2-2");
+            $('nav ul .2-2').toggleClass("rotate");
+        });
+
+        // 記憶體
+        $('.RAM-btn').click(function() {
+            $('nav ul .RAM-show').toggleClass("show3");
+            $('nav ul .3').toggleClass("rotate");
+        });
+
+        // 顯示卡
+        $('.VGA-btn').click(function() {
+            $('nav ul .VGA-show').toggleClass("show4");
+            $('nav ul .4').toggleClass("rotate");
+        });
+        $('.VGA_NVIDIA-btn').click(function() {
+            $('nav ul .VGA_NVIDIA-show').toggleClass("show4-1");
+            $('nav ul .4-1').toggleClass("rotate");
+        });
+        $('.VGA_AMD-btn').click(function() {
+            $('nav ul .VGA_AMD-show').toggleClass("show4-2");
+            $('nav ul .4-2').toggleClass("rotate");
+        });
+
+        // SSD固態硬碟
+        $('.SSD-btn').click(function() {
+            $('nav ul .SSD-show').toggleClass("show5");
+            $('nav ul .5').toggleClass("rotate");
+        });
+        $('.SSD_SATA-btn').click(function() {
+            $('nav ul .SSD_SATA-show').toggleClass("show5-1");
+            $('nav ul .5-1').toggleClass("rotate");
+        });
+        $('.SSD_M2PCIE-btn').click(function() {
+            $('nav ul .SSD_M2PCIE-show').toggleClass("show5-2");
+            $('nav ul .5-2').toggleClass("rotate");
+        });
+        $('.SSD_M2SATA-btn').click(function() {
+            $('nav ul .SSD_M2SATA-show').toggleClass("show5-3");
+            $('nav ul .5-3').toggleClass("rotate");
+        });
+
+
+        $('nav ul li').click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+
+        function next_btn() {
+            location.href = "/cart_order";
+        }
+
+        // window.onload = function() {
+        $.ajax({
+            url: "/api/cart_search",
+            type: "GET",
+            dataType: "json",
+            success: function cart_step_1(result) {
+                let products = result.length;
+                for (let i = 0; i < result.length; i++) {
+                    let tbody_1 = document.getElementById("tbody_new"); //找id=tbody_new的位置
+                    let tr_1 = document.createElement("tr");
+                    tbody_1.appendChild(tr_1);
+
+                    let prod_img = document.createElement("td");
+                    prod_img.setAttribute("id", "id_prod_img");
+                    prod_img.setAttribute("class", "prod_img");
+
+                    tr_1.appendChild(prod_img);
+
+                    let img_1 = document.createElement("img");
+                    img_1.setAttribute("src", result[i].image_title);
+                    prod_img.appendChild(img_1);
+
+                    let prod_name = document.createElement("td");
+                    prod_name.setAttribute("id", "id_prod_name");
+                    prod_name.setAttribute("class", "prod_name");
+                    prod_name.setAttribute("style", "text-align : left;");
+                    prod_name.innerHTML = result[i].pName;
+                    tr_1.appendChild(prod_name);
+
+                    let payment_method = document.createElement("td");
+                    payment_method.setAttribute("id", "id_payment_method");
+                    payment_method.setAttribute("class", "payment_method");
+                    tr_1.appendChild(payment_method);
+
+
+                    let card_icon = document.createElement("i");
+                    card_icon.setAttribute("class", "far fa-credit-card fa-2x");
+                    card_icon.setAttribute("style", "color:#f26649;");
+                    card_icon.setAttribute("aria-hidden", "true");
+                    payment_method.appendChild(card_icon);
+
+
+                    let unit_price = document.createElement("td");
+                    unit_price.setAttribute("id", "id_unit_price" + i);
+                    unit_price.setAttribute("class", "unit_price");
+                    unit_price.innerHTML = result[i].price;
+                    tr_1.appendChild(unit_price);
+
+                    // 數量
+                    let quantity = document.createElement("td");
+                    quantity.setAttribute("id", "id_quantity");
+                    quantity.setAttribute("class", "quantity");
+                    tr_1.appendChild(quantity);
+
+                    let quantity__minus = document.createElement("a");
+                    quantity__minus.setAttribute("class", "quantity__minus");
+                    quantity__minus.setAttribute("id", "id_quantity__minus" + i);
+                    quantity__minus.setAttribute("href", "#");
+                    quantity__minus.innerHTML = "-";
+                    // quantity__minus.setAttribute("onclick", "quantity__minus_new()")
+                    quantity.appendChild(quantity__minus);
+
+
+                    let quantity__input = document.createElement("input");
+                    quantity__input.setAttribute("class", "quantity__input");
+                    quantity__input.setAttribute("name", "quantity");
+                    quantity__input.setAttribute("type", "text");
+                    quantity__input.setAttribute("value", result[i].amount);
+                    quantity__input.setAttribute("id", "amount" + i);
+                    quantity.appendChild(quantity__input);
+
+                    let quantity__plus = document.createElement("a");
+                    quantity__plus.setAttribute("class", "quantity__plus");
+                    quantity__plus.setAttribute("id", "id_quantity__plus" + i);
+                    quantity__plus.setAttribute("href", "#");
+                    quantity__plus.innerHTML = "+";
+                    // quantity__plus.setAttribute("onclick", "quantity__plus_new()")
+                    quantity.appendChild(quantity__plus);
+
+                    let subtotal = document.createElement("td");
+                    subtotal.setAttribute("id", "id_subtotal" + i);
+                    subtotal.setAttribute("class", "subtotal");
+                    subtotal.innerHTML = result[i].amount * result[i].price;
+                    tr_1.appendChild(subtotal);
+
+                    let manage = document.createElement("td");
+                    manage.setAttribute("id", "id_function" + i);
+                    manage.setAttribute("class", "function");
+                    tr_1.appendChild(manage);
+
+                    let manage_icon = document.createElement("i");
+                    manage_icon.setAttribute("class", "far fa-trash-alt fa-2x");
+                    // manage_icon.setAttribute("onclick ", "delete_manage() ");
+                    manage_icon.setAttribute("aria-hidden", "true");
+                    manage_icon.setAttribute("id", i);
+                    manage.appendChild(manage_icon);
+
+                    let pNo_update = document.createElement("p");
+                    pNo_update.setAttribute("id", "pNo_update_to_databse" + i);
+
+                    let result_length = document.createElement("p");
+                    result_length.setAttribute("id", "result_length_new");
+                    result_length.innerHTML = result.length;
+
+                    // let dada = documnet.getElementById("sum1");
+                    // data.innerHTML = result[i].price;
+
+                    // let total_price = document.createElement("div");
+
+                    // manage_new.addEventListener("click ", function() {
+                    //     $.ajax({
+                    //         url: "/api/delete_order ",
+                    //         type: "POST ",
+                    //         dataType: "json ",
+                    //         data: {
+                    //             "pNo ": result[i].pNo
+                    //         },
+                    //         success: function() {
+                    //             window.location.reload();
+                    //         }
+                    //     });
+                    // });
+                    manage_icon.onclick = function() {
+                            $.ajax({
+                                url: "/api/delete_order",
+                                type: "POST",
+                                dataType: "json",
+                                data: {
+                                    "pNo": result[i].pNo
+                                },
+                                success: function() {
+                                    location.reload();
+                                }
+                            });
+                        }
+                        /* 商品數量增減 */
+                    $(document).ready(function() {
+                        const minus = $('#id_quantity__minus' + i);
+                        const plus = $('#id_quantity__plus' + i);
+                        const input = $('#amount' + i);
+                        minus.click(function(e) {
+                            // preventDefault()，是指停止事件
+                            e.preventDefault();
+                            var value = input.val();
+                            if (value > 1) {
+                                value--;
+                            }
+                            input.val(value);
+                            let product_total = value * result[i].price;
+                            document.getElementById("id_subtotal" + i).innerHTML = product_total;
+
+                            let item_total = 0;
+                            for (let j = 0; j < result.length; j++) {
+                                item_total += Number(document.getElementById("id_subtotal" + j).innerText);
+                            }
+                            document.getElementById("sum1").innerHTML = item_total;
+
+                            $.ajax({
+                                url: "/api/to_the_order",
+                                type: "POST",
+                                dataType: "json",
+                                data: {
+                                    "amount": value,
+                                    "pNo": result[i].pNo
+                                }
+                            })
+                        })
+                        plus.click(function(e) {
+                            e.preventDefault();
+                            var value = input.val();
+                            value++;
+                            input.val(value);
+                            let product_total = value * result[i].price;
+                            document.getElementById("id_subtotal" + i).innerHTML = product_total;
+
+                            let item_total = 0;
+                            for (let j = 0; j < result.length; j++) {
+                                item_total += Number(document.getElementById("id_subtotal" + j).innerHTML);
+                            }
+                            document.getElementById("sum1").innerHTML = item_total;
+
+                            $.ajax({
+                                url: "/api/to_the_order",
+                                type: "POST",
+                                dataType: "json",
+                                data: {
+                                    "amount": value,
+                                    "pNo": result[i].pNo
+                                }
+                            })
+                        })
+                    })
+                }
+
+                let item_total = 0;
+                for (let j = 0; j < result.length; j++) {
+                    item_total += Number(document.getElementById("id_subtotal" + j).innerHTML);
+                }
+                document.getElementById("sum1").innerHTML = item_total;
+            }
+        })
+    </script>
+</body>
+
+</html>

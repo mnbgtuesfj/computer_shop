@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>購物網站</title>
+    <link rel="stylesheet" href="static/css/product_news_1_style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="C:\Users\mnbgt\Desktop\website\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Information_bar">
+        <a href="/"><img class="website_logo" src="static/images/首頁_LOGO.PNG"></a>
+        <!-- <i class="fas fa-desktop fa-2x" id="computer_news">
+      <span class="news_icon">電腦新聞&ensp;&ensp;&ensp;&ensp;&ensp;|</span>
+    </i> -->
+        <a href="/login" style="text-decoration: none; color: black">
+            <i class="fas fa-user fa-2x" id="user"><span class="user_icon"> 登入 /
+          註冊&ensp;&ensp;&ensp;&ensp;&ensp;|</span></i>
+        </a>|
+        <a href="/cart" style="text-decoration: none; color: black;">
+            <i class="fas fa-shopping-cart fa-2x" aria-hidden="true" id="cart"><span class="cart_icon"> 購物車</span></i>
+        </a>
+
+    </div>
+    <div class="sidebar_new">
+        <nav class="sidebar" style="float: left;">
+            <div class="text">電腦零組件分類</div>
+            <!-- 搜尋 -->
+            <!-- <div class="search_box">
+        <form>
+          <input type="text" placeholder="請輸入關鍵字">
+          <input type="submit" value="搜尋">
+        </form>
+      </div> -->
+            <ul>
+                <li><a href="#" class="CPU-btn">中央處理器<span class="fas fa-caret-down 1"></span></a>
+                    <ul class="CPU-show">
+                        <li><a href="#" class="CPU_INTEL-btn">Intel<span class="fas fa-caret-down 1-1"></span></a>
+                            <ul class="CPU_INTEL-show">
+                                <li><a href="/product_info">Core i9系列(第11代)</a></li>
+                                <li><a href="#">Core i7系列(第11代)</a></li>
+                                <li><a href="#">Core i5系列(第11代)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="CPU_AMD-btn">AMD<span class="fas fa-caret-down 1-2"></span></a>
+                            <ul class="CPU_AMD-show">
+                                <li><a href="#">AMD Ryzen 9(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 7(5000系列)</a></li>
+                                <li><a href="#">AMD Ryzen 5(5000系列)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="MB-btn">主機板<span class="fas fa-caret-down 2"></span></a>
+                    <ul class="MB-show">
+                        <li><a href="#" class="MB_Intel-btn">Intel<span class="fas fa-caret-down 2-1"></span></a>
+                            <ul class="MB_INTEL-show">
+                                <li><a href="#">H410 | 1200腳位</a></li>
+                                <li><a href="#">H510 | 1200腳位</a></li>
+                                <li><a href="#">H570 | 1200腳位</a></li>
+                                <li><a href="#">B460 | 1200腳位</a></li>
+                                <li><a href="#">B560 | 1200腳位</a></li>
+                                <li><a href="#">Z490 | 1200腳位</a></li>
+                                <li><a href="#">Z590 | 1200腳位</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="MB_AMD-btn">AMD<span class="fas fa-caret-down 2-2"></span></a>
+                            <ul class="MB_AMD-show">
+                                <li><a href="#">AM4 X570</a></li>
+                                <li><a href="#">AM4 B550</a></li>
+                                <li><a href="#">AM4 A520</a></li>
+                                <li><a href="#">AM4 X470</a></li>
+                                <li><a href="#">AM4 B450</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="RAM-btn">記憶體<span class="fas fa-caret-down 3"></span></a>
+                    <ul class="RAM-show">
+                        <li><a href="#">DDR4-8GB</a></li>
+                        <li><a href="#">DDR4-16GB</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="VGA-btn">顯示卡<span class="fas fa-caret-down 4"></span></a>
+                    <ul class="VGA-show">
+                        <li><a href="#" class="VGA_NVIDIA-btn">NVIDIA<span class="fas fa-caret-down 4-1"></span></a>
+                            <ul class="VGA_NVIDIA-show">
+                                <li><a href="#">RTX3090</a></li>
+                                <li><a href="#">RTX3080Ti</a></li>
+                                <li><a href="#">RTX3080</a></li>
+                                <li><a href="#">RTX3070Ti</a></li>
+                                <li><a href="#">RTX3070</a></li>
+                                <li><a href="#">RTX3060Ti</a></li>
+                                <li><a href="#">RTX3060</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="VGA_AMD-btn">AMD<span class="fas fa-caret-down 4-2"></span></a>
+                            <ul class="VGA_AMD-show">
+                                <li><a href="#">RX6900XT</a></li>
+                                <li><a href="#">RX6800XT</a></li>
+                                <li><a href="#">RX6800</a></li>
+                                <li><a href="#">RX6700XT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="SSD-btn">SSD固態硬碟<span class="fas fa-caret-down 5"></span></a>
+                    <ul class="SSD-show">
+                        <li><a href="#" class="SSD_SATA-btn">2.5吋 SATA<span class="fas fa-caret-down 5-1"></span></a>
+                            <ul class="SSD_SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2PCIE-btn">M.2 PCIE<span class="fas fa-caret-down 5-2"></span></a>
+                            <ul class="SSD_M2PCIE-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="SSD_M2SATA-btn">M.2 SATA<span class="fas fa-caret-down 5-3"></span></a>
+                            <ul class="SSD_M2SATA-show">
+                                <li><a href="#">500G/512G</a></li>
+                                <li><a href="#">1TB(含)以上</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#">電源供應器</a></li>
+                <li><a href="#">電腦機殼</a></li>
+                <li><a href="#">螢幕</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="product_info">
+        <div>
+            <h1 class="t1">
+                ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡開箱實測 全面升級的中階性能選擇
+            </h1>
+        </div>
+        <br>
+        <p class="time">
+            2021-07-02 12:58
+        </p>
+        <div class="info_photo">
+            <img src="https://attach.mobile01.com/attach/202107/mobile01-e38ebea3db1b275d5bd5974427dbb4a4.jpg">
+        </div>
+        <p>
+            ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡。
+        </p>
+        <br>
+        <br>
+        <p>
+            隨著礦潮慢慢退燒以及 NVIDIA 對顯示卡加入算力限制，過去一年被戲稱為『空氣顯卡』的高性能顯示卡，近期在市場上也開始出現較多貨源供給以及價格慢慢開始回復常態的跡象，雖然離過去正常的市場狀況仍然有一段距離，但對等等黨來說總是看到希望，尤其是像 3070 Ti 這類目標在 1440p 解析度的主力等級顯卡，更是很多消費者主要關注的目標。這次陳拔要來開箱實測的，是 ZOTAC 今年在 RTX 30 Ti 系列顯卡中推出的新款 AMP HOLO 系列：ZOTAC Gaming GEFORCE RTX
+            3070 Ti AMP HOLO ，以 3070 Ti 產品中較為平價的策略以及三風扇散熱設計，在市場上也是相當熱門的一款 RTX 3070 Ti 產品。
+        </p>
+        <br>
+        <br>
+        <h1 class="t2">
+            ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡外觀開箱
+        </h1>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-58e5bf1571cfa621444b19297be44af2.jpg">
+        <br>
+        <br>
+        <p>
+            身為今年的新系列，ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡的盒裝正面跟先前陳拔測試過的 ZOTAC Gaming GEFORCE RTX 3080 Ti AMP HOLO（請見：ZOTAC GAMING GeForce RTX 3080 Ti AMP Holo 顯示卡開箱實測 緊緻身形內的效能選擇）一樣，採用更為炫目的外盒塗裝設計，不過基本上仍然維持 ZＯTAC 產品的一貫特色。
+        </p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-64454e7620020b430703a080e6efefc0.jpg">
+        <br>
+        <br>
+        <p>盒裝左下角的產品特色圖示，包括 ICE STORM 2.0 冷卻設計、SPECTRA 2.0 燈光效果、FREEZE TECH 自動停轉功能以及 FireStorm 智慧風扇系統，這部分跟 RTX 3080 Ti 的版本是一樣的。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-6da652f51eff7ec834b7713cb5f71d3b.jpg">
+        <br>
+        <br>
+        <p>今年新的 AMP HOLO 產品線，在散熱設計與燈效部分都做出加強。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-9fd03cfba9b2fb584d23ec9a231c7088.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡的盒裝背面，一樣呈現顯示卡的正反面外觀與各項功能特色。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-10dd570ba24581f65cf156b6d064c1e8.jpg">
+        <br>
+        <br>
+        <p>內盒一打開為內含說明文件的封套。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-7edc2c96a4117d095bf8e98d0298e482.jpg">
+        <br>
+        <br>
+        <p>下層則是顯示卡本體以及兩組電源轉接線。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-d40e2cbb7f9f88fdbb488c52124075d2.jpg">
+        <br>
+        <br>
+        <p>電源轉接線的形式為 4+4 Pin 的 PCIe 電源接頭（黑色）轉雙 6 Pin 電源接頭（白色）。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-aca0808da4341a6592607767b2deb607.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡本體正面，跟 3080 Ti 的版本基本上採用同一散熱設計，包括三具 11 片扇葉風扇、雙組散熱器配置，另外在顯卡側邊可看到這次新的 Holo Black 全息極光視覺效果。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-d332ac23f92a7f23390fcad48cbc604f.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡的散熱風扇特寫，一樣採用 ZOTAC 特殊的無風扇框設計，來加大周邊吸入的氣流量。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-5b6955d0434276600d10f9297e03c4bd.jpg">
+        <br>
+        <br>
+        <p>換個角度來看風扇設計。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-ae90e52767b4ddc41d840b56f8d9e018.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡裝機時面向外側的側邊，彩色漸變的 Holo Black 全息極光視覺效果在通電後會有燈效顯示。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-b077acfd06efabd5ed4fd35839b59e86.jpg">
+        <br>
+        <br>
+        <p>通電後的燈效顯示狀況。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-e1500d4ab7205951d1945b425ccffa37.jpg">
+        <br>
+        <br>
+        <p>供電設計採用雙 8 Pin 的形式。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-a734a0e338e0f66d9200f69b9408f7ed.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡的背面設計，具有金屬強化背板增加強度，其上也具有設計感的條狀散熱格柵增加散熱效率。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-527a5fbfd2b12f99ac6554a94a44bedf.jpg">
+        <br>
+        <br>
+        <p>散熱背板尾端的散熱格柵數目較多，加大風扇的通過氣流，另外也可看到散熱鰭片與導管設計。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-cb30573d57488d705e4c56915dd42a9e.jpg">
+        <br>
+        <br>
+        <p>前端的開口處則是集中在 GPU 側邊的顯示記憶體背面。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-106ea0748deaf123ab7e5f1bc84f8f32.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡安裝時面向主板的另一側，以大面積的簍空設計增加散熱效率，另外可以 PCB 板僅佔整張卡約 2/3 的面積，其上則是分為兩組的散熱器鰭片以及從 GPU 分出的多條散熱導管。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-fefede75c756491b6cb5e1ae46aa267b.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡的尾端配置，相較於 3080 Ti 版本取消了顯示卡支撐架的固定螺絲孔。</p>
+        <br>
+        <br>
+        <img src="https://attach.mobile01.com/attach/202107/mobile01-bdf4ba86527d88d4ed7ba1091c179882.jpg">
+        <br>
+        <br>
+        <p>ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡的 IO 背板採用鏤空設計，提供四組影像輸出介面：DisplayPort 1.4a x3、HDMI 2.1 x1。</p>
+    </div>
+    <!-- 從這裡開始，輪播 -->
+    <!-- <div id="slider">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+    <div id="slides">
+      <div id="overflow">
+        <div class="inner">
+          <div class="slide slide_1">
+            <img src="static\images\carousel_1.jpeg">
+          </div>
+          <div class="slide slide_2">
+            <img src="static\images\carousel_2.jpeg">
+          </div>
+          <div class="slide slide_3">
+            <img src="static\images\carousel_3.jpeg">
+          </div>
+          <div class="slide slide_4">
+            <img src="static\images\carousel_4.jpeg">
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- controls是更換輪播頁面的按鈕(> or <) -->
+    <!-- <div id="controls">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div> -->
+    <!-- bullets是更換輪播頁面的按鈕(圓形radio) -->
+    <!-- <div id="bullets">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div>
+  </div> -->
+    <!-- 到這裡結束，輪播 -->
+    <!-- <div class="u-gapNextV--lg">
+    <div class="l-heading">電腦新聞</div>>
+    <div class="l-appearArea">
+      <div class="l-appearArea__content u-overflow">
+        <div class="l-cols">
+          <div class="l-cols__4">
+            123
+          </div>
+          <div class="l-cols__4">
+            123
+          </div>
+          <div class="l-cols__4">
+            123
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div> -->
+    <!-- 電腦新聞 -->
+    <!-- <div class="product_news">
+    <div>
+      <h1 class="heading">
+        電腦新聞
+      </h1>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/7253cf568396086df2b5f0f0b7880120.jpg">
+      </div>
+      <div class="product_description">
+        【上班一定要看】5種Chrome摸魚擴充功能 學會變高手
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/a80c7969dd8fbb85c26c9bbac1c32cbf.jpg">
+      </div>
+      <div class="product_description">
+        CORSAIR H170i ELITE CAPELLIX AIO CPU 水冷散熱器實測 最強賊船冷卻旗艦出航
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/843e2acf8fa3a0a2d49645903e193714.jpg">
+      </div>
+      <div class="product_description">
+        LG UltraFine Display Ergo 32UN880 人體工學螢幕開箱 顯示視野隨你調整
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/06d201fc153b04a98a6103eb17a9054f.jpg">
+      </div>
+      <div class="product_description">
+        ROG RYUJIN II 360 AIO 水冷散熱器實測 將敗家信仰提升到最高點
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/c9ae8cc714a1dcc61ab56e23243e65a2.jpg">
+      </div>
+      <div class="product_description">
+        TP-Link Archer GX90 WiFi 6 電競路由器開箱體驗 居家防疫時期的必備網路良藥
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/4649a1fe981cc9aace83954506c3b426.jpg">
+      </div>
+      <div class="product_description">
+        BenQ PD2725U 螢幕開箱測試 以多模式提供色彩準度的專業選擇
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/2b8e4b57a24b79999a52da555c1486fd.jpg">
+      </div>
+      <div class="product_description">
+        ZOTAC Gaming GEFORCE RTX 3070 Ti AMP HOLO 顯示卡開箱實測 全面升級的中階性能選擇
+      </div>
+    </div>
+    <div class="product_box">
+      <div class="product_box_new">
+        <img class="product_img" src="https://attach.mobile01.com/image/news/63536092d75bad78b1ab20378becf6f3.jpg">
+      </div>
+      <div class="product_description">
+        ROG SWIFT PG32UQX 電競螢幕開箱體驗 以 Mini LED 技術達成超細膩畫質演出
+      </div>
+    </div>
+  </div> -->
+    <!-- 電腦新聞 -->
+
+    <script>
+        // 中央處理器
+        $('.CPU-btn').click(function() {
+            $('nav ul .CPU-show').toggleClass("show1");
+            $('nav ul .1').toggleClass("rotate");
+        });
+        $('.CPU_INTEL-btn').click(function() {
+            $('nav ul .CPU_INTEL-show').toggleClass("show1-1");
+            $('nav ul .1-1').toggleClass("rotate");
+        });
+        $('.CPU_AMD-btn').click(function() {
+            $('nav ul .CPU_AMD-show').toggleClass("show1-2");
+            $('nav ul .1-2').toggleClass("rotate");
+        });
+
+        // 主機板
+        $('.MB-btn').click(function() {
+            $('nav ul .MB-show').toggleClass("show2");
+            $('nav ul .2').toggleClass("rotate");
+        });
+        $('.MB_Intel-btn').click(function() {
+            $('nav ul .MB_INTEL-show').toggleClass("show2-1");
+            $('nav ul .2-1').toggleClass("rotate");
+        });
+        $('.MB_AMD-btn').click(function() {
+            $('nav ul .MB_AMD-show').toggleClass("show2-2");
+            $('nav ul .2-2').toggleClass("rotate");
+        });
+
+        // 記憶體
+        $('.RAM-btn').click(function() {
+            $('nav ul .RAM-show').toggleClass("show3");
+            $('nav ul .3').toggleClass("rotate");
+        });
+
+        // 顯示卡
+        $('.VGA-btn').click(function() {
+            $('nav ul .VGA-show').toggleClass("show4");
+            $('nav ul .4').toggleClass("rotate");
+        });
+        $('.VGA_NVIDIA-btn').click(function() {
+            $('nav ul .VGA_NVIDIA-show').toggleClass("show4-1");
+            $('nav ul .4-1').toggleClass("rotate");
+        });
+        $('.VGA_AMD-btn').click(function() {
+            $('nav ul .VGA_AMD-show').toggleClass("show4-2");
+            $('nav ul .4-2').toggleClass("rotate");
+        });
+
+        // SSD固態硬碟
+        $('.SSD-btn').click(function() {
+            $('nav ul .SSD-show').toggleClass("show5");
+            $('nav ul .5').toggleClass("rotate");
+        });
+        $('.SSD_SATA-btn').click(function() {
+            $('nav ul .SSD_SATA-show').toggleClass("show5-1");
+            $('nav ul .5-1').toggleClass("rotate");
+        });
+        $('.SSD_M2PCIE-btn').click(function() {
+            $('nav ul .SSD_M2PCIE-show').toggleClass("show5-2");
+            $('nav ul .5-2').toggleClass("rotate");
+        });
+        $('.SSD_M2SATA-btn').click(function() {
+            $('nav ul .SSD_M2SATA-show').toggleClass("show5-3");
+            $('nav ul .5-3').toggleClass("rotate");
+        });
+
+
+        $('nav ul li').click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    </script>
+
+</body>
+
+</html>
